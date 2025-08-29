@@ -1,0 +1,159 @@
+// _mixin-display.scss
+
+@mixin display($type) {
+  display: $type;
+}
+
+@mixin block {
+  display: block;
+}
+
+@mixin inline {
+  display: inline;
+}
+
+@mixin inline-block {
+  display: inline-block;
+}
+
+@mixin hidden {
+  display: none;
+}
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin inline-flex {
+  display: inline-flex;
+}
+
+@mixin flex-center {
+  @include flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  @include flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  @include flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  @include flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-wrap {
+  flex-wrap: wrap;
+}
+
+@mixin flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+@mixin justify($type) {
+  justify-content: $type;
+}
+
+@mixin justify-center {
+  justify-content: center;
+}
+
+@mixin justify-between {
+  justify-content: space-between;
+}
+
+@mixin justify-around {
+  justify-content: space-around;
+}
+
+@mixin justify-end {
+  justify-content: flex-end;
+}
+
+@mixin align($type) {
+  align-items: $type;
+}
+
+@mixin align-center {
+  align-items: center;
+}
+
+@mixin align-start {
+  align-items: flex-start;
+}
+
+@mixin align-end {
+  align-items: flex-end;
+}
+
+@mixin align-stretch {
+  align-items: stretch;
+}
+
+@mixin flex-layout(
+  $direction: row,
+  $wrap: nowrap,
+  $justify: center,
+  $align: center,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin self($type) {
+  align-self: $type;
+}
+
+@mixin self-center {
+  align-self: center;
+}
+
+@mixin self-start {
+  align-self: flex-start;
+}
+
+@mixin self-end {
+  align-self: flex-end;
+}
+
+@mixin grid {
+  display: grid;
+}
+
+@mixin grid-cols($count, $gap) {
+  display: grid;
+  grid-template-columns: repeat($count, 1fr);
+  gap: $gap;
+}
+
+@mixin grid-auto($min, $max) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, $max));
+}
+
+@mixin place-items($type) {
+  place-items: $type;
+}
+
+@mixin place-content($type) {
+  place-content: $type;
+}
+
+@mixin gap($size) {
+  gap: $size;
+}

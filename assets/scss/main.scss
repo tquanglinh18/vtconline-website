@@ -1,0 +1,12 @@
+@use "./_global";
+
+//Add Components CSS
+@use "./base/_button";
+@use "./base/_card";
+
+//Add Page CSS
+@use "./pages/_home";
+
+//Add Layout CSS
+@use "./layout/_footer";
+@use "./layout/_header";

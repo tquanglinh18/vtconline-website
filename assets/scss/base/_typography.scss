@@ -1,0 +1,9 @@
+// _typography.scss
+@use "../abstracts/variables" as *;
+
+@mixin max-line($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -1,6 +1,14 @@
 // _typography.scss
 @use "../abstracts/variables" as *;
 
+// Font sizes
+$text-sm: 12px;
+$text-md: 14px;
+$text-base: 16px;
+$text-lg: 20px;
+$text-xl: 24px;
+$text-xxl: 28px;
+
 @mixin max-line($lines) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;

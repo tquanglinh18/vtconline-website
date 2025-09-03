@@ -1,1 +1,231 @@
 @use "../global" as *;
+
+.vtco-swiper {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920/840;
+  .vtco-slide {
+    width: 100%;
+    position: relative;
+    &--img {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1920/840;
+        object-fit: cover;
+        display: block;
+      }
+    }
+    &--title {
+      width: 100%;
+      max-width: $res-breakpoint-xxl;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      color: $vars-white;
+      font-family: "Exo-SemiBold";
+      font-size: func-getPxFromRem(2.5);
+      padding-right: 16%;
+      @include res-responsive(xxl) {
+        padding: 1rem;
+        font-size: func-getPxFromRem(2);
+      }
+      @include res-responsive(md) {
+        padding: 1rem;
+        font-size: func-getPxFromRem(1.5);
+      }
+    }
+  }
+
+  .vtco-pagination {
+    width: 100%;
+    max-width: $res-breakpoint-xxl;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 1;
+    @include display-flex-layout(row, nowrap, end, end, 0.5rem);
+    @include res-responsive(lg) {
+      bottom: 10%;
+      justify-content: start;
+      padding: 0 1rem;
+    }
+    @include res-responsive(xxl) {
+      padding: 0 1rem;
+    }
+    .swiper-pagination-bullet {
+      background: $vars-white;
+      opacity: 0.3;
+      aspect-ratio: 1/1;
+      width: 10px;
+      height: 10px;
+      transition: all 0.3s ease;
+      &.swiper-pagination-bullet-active {
+        background: $vars-vtco-60;
+        opacity: 1;
+        width: $vars-spacing-xl;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.vtco-section {
+  width: 100%;
+  padding: 4% 1rem;
+
+  .vtc-section-wrapper {
+    width: 100%;
+    max-width: $res-breakpoint-xxl;
+    margin: 0 auto;
+
+    @include res-responsive(lg) {
+      max-width: $vars-container-width-tablet;
+    }
+  }
+
+  .section-name {
+    font-size: func-getPxFromRem(1.875);
+    font-family: "Exo-SemiBold";
+    color: $vars-vtco-60;
+    margin-bottom: $vars-spacing-normal;
+  }
+
+  .section-info {
+    color: $vars-vtco-black;
+    .section-title {
+      font-family: "Exo-SemiBold";
+      font-size: func-getPxFromRem(2.25);
+      line-height: 1.25;
+      letter-spacing: 1px;
+      word-spacing: 1px;
+      @include res-responsive(lg) {
+        font-size: func-getPxFromRem(1.875);
+      }
+      @include res-responsive(md) {
+        font-size: func-getPxFromRem(1.125);
+      }
+    }
+    .section-desc {
+      font-family: "Exo-Medium";
+      font-size: $txt-text-base;
+      padding: func-getPxFromRem(2.5) 0;
+      @include res-responsive(md) {
+        padding: func-getPxFromRem(1) 0;
+      }
+      @include res-responsive(lg) {
+        padding: func-getPxFromRem(1.5) 0;
+      }
+      p {
+        margin-bottom: $vars-spacing-md;
+        line-height: 1.5;
+        line-height: 24px;
+        word-spacing: 2px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+        @include res-responsive(md) {
+          font-size: func-getPxFromRem(0.875);
+        }
+      }
+    }
+    .section-actions {
+      width: 100%;
+      height: 100%;
+      @include display-flex-layout(
+        row,
+        nowrap,
+        start,
+        center,
+        $vars-spacing-normal
+      );
+    }
+  }
+}
+
+.vtco-strategy {
+  background-image: url("../images/img_decor_dots.png");
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: -8px calc(100% - 8px);
+
+  .vtc-section-wrapper {
+    @include display-flex-layout(
+      row,
+      nowrap,
+      space-between,
+      start,
+      $vars-spacing-normal
+    );
+    padding: 2% 0;
+    @include res-responsive(lg) {
+      @include display-flex-column;
+    }
+  }
+  .strategy-text {
+    width: 45%;
+    @include res-responsive(lg) {
+      width: 100%;
+    }
+  }
+
+  .strategy-highlights {
+    width: 40%;
+    position: relative;
+    @include res-responsive(lg) {
+      width: 100%;
+    }
+  }
+
+  .strategy-wraper {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    @include display-grid-cols(2, $vars-spacing-xxl);
+    @include res-responsive(lg) {
+      gap: $vars-spacing-lg;
+    }
+    @include res-responsive(md) {
+      gap: $vars-spacing-md;
+    }
+    .strategy-item {
+      aspect-ratio: 1/1;
+      @include display-flex-layout(
+        column,
+        nowrap,
+        center,
+        center,
+        $vars-spacing-xl
+      );
+      background: $vars-grey-100;
+      border-radius: 50%;
+      color: $vars-vtco-black;
+
+      img {
+        width: 100%;
+        max-width: 40%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+
+  .strategy-decor {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    @include display-flex-layout(row, nowrap, center, center);
+    img {
+      width: 100%;
+      max-width: 48%;
+      aspect-ratio: 1/1;
+    }
+  }
+}

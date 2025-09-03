@@ -1,1 +1,16 @@
 @use "../global" as *;
+
+.btn-normal {
+  padding: $vars-spacing-md $vars-spacing-lg;
+  background: $vars-vtco-50;
+  border-radius: $vars-spacing-sm;
+  color: $vars-white;
+  border: none;
+  box-shadow: 0px 2px 5px 0px #676e7614;
+  font-size: func-getPxFromRem(0.875);
+  line-height: 1.25;
+  &::after {
+    content: "→";
+    padding-left: $vars-spacing-sm;
+  }
+}

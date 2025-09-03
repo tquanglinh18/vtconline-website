@@ -1,2 +1,64 @@
 // _header.scss
+@use "sass:map";
+
 @use "../global" as *;
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.vtco-header {
+  width: 100%;
+  height: func-getPxFromRem(4.5);
+  background-color: $vars-white;
+  border-bottom: 1px solid $vars-grey-200;
+  padding: $vars-spacing-normal;
+}
+
+.vtco-header-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: $res-breakpoint-xxl;
+  margin: auto;
+  @include display-flex-layout(
+    row,
+    nowrap,
+    space-between,
+    center,
+    $vars-spacing-normal
+  );
+
+  .vtco-logo {
+    height: 32px;
+    img {
+      width: auto;
+      height: 32px;
+      object-fit: containƒ;
+    }
+  }
+
+  .vtco-nav {
+    flex: 1;
+    ul {
+      height: 100%;
+      @include display-flex-layout(row, nowrap, center, center, 4%);
+    }
+
+    .vtco-nav-item {
+      color: $vars-grey-600;
+      transition: all 0.3s ease;
+      padding: $vars-spacing-sm 0;
+      &:hover,
+      &:first-child {
+        color: $vars-vtco-50;
+      }
+      &:first-child {
+        font-family: "Exo-SemiBold";
+      }
+    }
+  }
+
+  .vtco-action {
+  }
+}

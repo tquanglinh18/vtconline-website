@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
-    url("../fonts/Inter-Regular.woff") format("woff");
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -9,8 +8,7 @@
 
 @font-face {
   font-family: "Inter-Medium";
-  src: url("../fonts/Inter-Medium.woff2") format("woff2"),
-    url("../fonts/Inter-Medium.woff") format("woff");
+  src: url("../fonts/Inter-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -18,8 +16,7 @@
 
 @font-face {
   font-family: "Inter-SemiBold";
-  src: url("../fonts/Inter-SemiBold.woff2") format("woff2"),
-    url("../fonts/Inter-SemiBold.woff") format("woff");
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -27,16 +24,50 @@
 
 @font-face {
   font-family: "Inter-Bold";
-  src: url("../fonts/Inter-Bold.woff2") format("woff2"),
-    url("../fonts/Inter-Bold.woff") format("woff");
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../fonts/Exo-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo-Medium";
+  src: url("../fonts/Exo-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo-SemiBold";
+  src: url("../fonts/Exo-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo-Bold";
+  src: url("../fonts/Exo-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Exo", "Inter", sans-serif;
   font-size: 16px;
+  font-weight: normal;
+  line-height: 1;
+  min-height: 200vh;
 }
 
 *,
@@ -47,9 +78,9 @@ body {
   box-sizing: border-box;
 }
 
-/* Custom scrollbar styles
+/* Custom scrollbar styles */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -57,9 +88,29 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f34141;
+  background: #85c446;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #cd3636;
-} */
+  background: #72ad37;
+}
+
+/* Reset CSS */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input:focus,
+input:active,
+input:target,
+input:focus-visible,
+textarea:focus,
+textarea:active {
+  outline: none;
+}

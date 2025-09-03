@@ -1,0 +1,5 @@
+/// Convert rem to px
+@function getPxFromRem($rem) {
+ @return $rem * 16px;
+}
+

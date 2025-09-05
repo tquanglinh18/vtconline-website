@@ -15,3 +15,15 @@ $text-xxl: 28px;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@mixin semiBoldText {
+  font-family: "Exo-SemiBold";
+}
+
+@mixin boldText {
+  font-family: "Exo-Bold";
+}
+
+@mixin mediumText {
+  font-family: "Exo-Medium";
+}

@@ -104,12 +104,19 @@
 
 .vtco-section {
   width: 100%;
-  padding: 4% 1rem;
+  margin: 4% 0;
+}
+.vtco-section:first-of-type {
+  margin-top: 0;
+}
+.vtco-section:last-of-type {
+  margin-bottom: 0;
 }
 .vtco-section .vtc-section-wrapper {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 2% 16px;
 }
 @media (max-width: 992px) {
   .vtco-section .vtc-section-wrapper {
@@ -145,17 +152,6 @@
 .vtco-section .section-info .section-desc {
   font-family: "Exo-Medium";
   font-size: 16px;
-  padding: 40px 0;
-}
-@media (max-width: 768px) {
-  .vtco-section .section-info .section-desc {
-    padding: 16px 0;
-  }
-}
-@media (max-width: 992px) {
-  .vtco-section .section-info .section-desc {
-    padding: 24px 0;
-  }
 }
 .vtco-section .section-info .section-desc p {
   margin-bottom: 12px;
@@ -183,19 +179,19 @@
 }
 
 .vtco-strategy {
-  background-image: url("../images/img_decor_dots.png");
+  background-image: url("../images/img_decor_dots.png"), url("../images/img_decor_rainbow.png");
   background-repeat: no-repeat;
-  background-size: auto auto;
-  background-position: -8px calc(100% - 8px);
+  background-size: auto auto, 78% auto;
+  background-position: -8px calc(100% - 8px), top left;
 }
 .vtco-strategy .vtc-section-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
   gap: 16px;
-  padding: 2% 0;
+  padding: 8% 1rem 4%;
 }
 @media (max-width: 992px) {
   .vtco-strategy .vtc-section-wrapper {
@@ -212,12 +208,29 @@
   }
 }
 .vtco-strategy .strategy-highlights {
-  width: 40%;
+  width: 35%;
   position: relative;
+}
+@media (max-width: 1200px) {
+  .vtco-strategy .strategy-highlights {
+    width: 45%;
+  }
+}
+@media (max-width: 1440px) {
+  .vtco-strategy .strategy-highlights {
+    width: 40%;
+  }
 }
 @media (max-width: 992px) {
   .vtco-strategy .strategy-highlights {
-    width: 100%;
+    width: 80%;
+    margin: 4% auto;
+  }
+}
+@media (max-width: 576px) {
+  .vtco-strategy .strategy-highlights {
+    width: 90%;
+    margin: 4% auto;
   }
 }
 .vtco-strategy .strategy-wraper {
@@ -235,10 +248,11 @@
 }
 @media (max-width: 768px) {
   .vtco-strategy .strategy-wraper {
-    gap: 12px;
+    gap: 16px;
   }
 }
 .vtco-strategy .strategy-wraper .strategy-item {
+  position: relative;
   aspect-ratio: 1/1;
   display: flex;
   flex-direction: column;
@@ -249,12 +263,51 @@
   background: #f6f7f9;
   border-radius: 50%;
   color: #272727;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  cursor: pointer;
 }
-.vtco-strategy .strategy-wraper .strategy-item img {
+.vtco-strategy .strategy-wraper .strategy-item--img {
+  transition: all 0.5s ease;
+}
+.vtco-strategy .strategy-wraper .strategy-item--img img {
   width: 100%;
-  max-width: 40%;
+  max-width: 75%;
   margin: 0 auto;
   display: block;
+  transition: all 0.5s ease;
+}
+@media (max-width: 576px) {
+  .vtco-strategy .strategy-wraper .strategy-item--img img {
+    max-width: 60%;
+  }
+}
+.vtco-strategy .strategy-wraper .strategy-item p {
+  margin: 0;
+  font-size: 20px;
+  font-family: "Exo-SemiBold";
+  transition: all 0.5s ease;
+}
+.vtco-strategy .strategy-wraper .strategy-item:hover {
+  background: linear-gradient(180deg, #B1D23E 0%, #76AE45 100%);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+.vtco-strategy .strategy-wraper .strategy-item:hover .strategy-item--img {
+  transform: translateY(-50%) scale(0);
+  opacity: 0;
+}
+.vtco-strategy .strategy-wraper .strategy-item:hover p {
+  width: fit-content;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+}
+@media (max-width: 768px) {
+  .vtco-strategy .strategy-wraper .strategy-item:hover p {
+    font-size: 20px;
+  }
 }
 .vtco-strategy .strategy-decor {
   position: absolute;
@@ -271,6 +324,223 @@
   width: 100%;
   max-width: 48%;
   aspect-ratio: 1/1;
+}
+.vtco-strategy .section-desc {
+  padding: 40px 0;
+}
+@media (max-width: 768px) {
+  .vtco-strategy .section-desc {
+    padding: 16px 0;
+  }
+}
+@media (max-width: 992px) {
+  .vtco-strategy .section-desc {
+    padding: 24px 0;
+  }
+}
+
+.vtco-ecosystems .section-desc {
+  max-width: 75%;
+}
+
+.goPlayLstServies {
+  width: 100%;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4% 2%;
+}
+@media (max-width: 768px) {
+  .goPlayLstServies {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
+
+.goPlayService-card {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 704/334;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.goPlayService-card--bground {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.goPlayService-card--bground img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.goPlayService-card--content {
+  position: absolute;
+  padding: 6%;
+  inset: 0;
+  z-index: 1;
+  border-radius: 16px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.875vw;
+  transition: all 0.3s ease;
+  font-family: "Exo-SemiBold";
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .goPlayService-card--content {
+    font-size: 5vw;
+  }
+}
+.goPlayService-card--content .service-name {
+  transition: all 0.5s ease;
+}
+.goPlayService-card--content:hover {
+  background: linear-gradient(180deg, #B1D23E 0%, #76AE45 100%);
+  justify-content: center;
+  font-size: 2.125vw;
+}
+@media (max-width: 768px) {
+  .goPlayService-card--content:hover {
+    font-size: 7vw;
+  }
+}
+.goPlayService-card--content:hover .service-name {
+  transform: translateY(0);
+}
+
+.vtco-culture {
+  background-image: url("../images/img_decor_culture.png");
+  background-position: 0 85%;
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+}
+.vtco-culture .vtc-section-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+}
+@media (max-width: 992px) {
+  .vtco-culture .vtc-section-wrapper {
+    flex-direction: column-reverse;
+  }
+}
+.vtco-culture .culture-text {
+  width: 45%;
+}
+@media (max-width: 992px) {
+  .vtco-culture .culture-text {
+    width: 100%;
+  }
+}
+.vtco-culture .culture-highlights {
+  width: 45%;
+  position: relative;
+  background-image: url("../images/img_decor_dots.png");
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: top left;
+}
+@media (max-width: 992px) {
+  .vtco-culture .culture-highlights {
+    width: 80%;
+    margin: 4% auto;
+  }
+}
+@media (max-width: 576px) {
+  .vtco-culture .culture-highlights {
+    width: 90%;
+    margin: 4% auto;
+  }
+}
+.vtco-culture .culture-highlights img {
+  width: 100%;
+  border-radius: 25% 0 25% 25%;
+  aspect-ratio: 4.5/4;
+  object-fit: cover;
+}
+.vtco-culture .section-desc {
+  padding: 40px 0;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+  .vtco-culture .section-desc {
+    padding: 16px 0;
+  }
+}
+@media (max-width: 992px) {
+  .vtco-culture .section-desc {
+    padding: 24px 0;
+  }
+}
+.vtco-culture .section-desc b {
+  font-family: "Exo-Bold";
+}
+.vtco-culture .section-desc ul {
+  list-style: none;
+  margin: 1rem;
+}
+.vtco-culture .section-desc ul li {
+  padding-left: 32px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.vtco-culture .section-desc ul li:last-child {
+  margin-bottom: 0;
+}
+.vtco-culture .section-desc ul li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  aspect-ratio: 1/1;
+  background-image: url("../images/ic_list_dots.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.effect.effect-4 {
+  transition: all 0.2s linear 0s;
+}
+.effect.effect-4:before {
+  content: "\f178";
+  font-family: FontAwesome;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  transform: scale(0, 1);
+  transition: all 0.2s linear 0s;
+}
+.effect.effect-4:hover {
+  text-indent: -9999px;
+}
+.effect.effect-4:hover:before {
+  transform: scale(1, 1);
+  text-indent: 0;
 }
 
 header {

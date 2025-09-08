@@ -1,32 +1,67 @@
 // _footer.scss
 @use "../global" as *;
 
-.effect.effect-4 {
-  transition: all 0.2s linear 0s;
-  
-  &:before {
-    content: "\f178";
-    font-family: FontAwesome;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0px;
+.vtco-footer {
+  width: 100%;
+  background-color: $vars-white;
+  color: $vars-grey-800;
+  font-size: 14px;
+
+  .vtco-footer-wrapper {
     width: 100%;
-    height: 100%;
-    text-align: center;
-    font-size: 30px;
-    transform: scale(0,1);
-    transition: all 0.2s linear 0s;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4% $vars-spacing-normal 2%;
+    border-bottom: 1px solid #ccc;
+    @include display-grid-cols(5, $vars-spacing-normal);
+    @include res-responsive(lg) {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 8% $vars-spacing-normal 4%;
+      max-width: 75%;
+    }
+    @include res-responsive(sm) {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 10% $vars-spacing-normal 6%;
+      max-width: 100%;
+    }
   }
-  
-  &:hover {
-    text-indent: -9999px;
-    
-    &:before {
-      transform: scale(1,1);
-      text-indent: 0;
+  .copy-right {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .footer-col {
+    .footer-title {
+      width: 100%;
+      margin-bottom: $vars-spacing-lg;
+      @include txt-boldText;
+      position: relative;
+      @include res-responsive(lg) {
+        &::after {
+          content: "∨";
+          position: absolute;
+          right: 0.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .footer-content {
+      @include res-responsive(lg) {
+        display: none;
+      }
+      ul {
+        li {
+          padding: $vars-spacing-sm 0;
+          transition: all 0.3s ease;
+          line-height: 1.5;
+          transition: all 0.3s ease;
+          &:hover {
+            @include txt-semiBoldText;
+          }
+        }
+      }
     }
   }
 }

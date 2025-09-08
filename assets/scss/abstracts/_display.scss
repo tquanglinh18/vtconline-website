@@ -63,6 +63,9 @@
 @mixin justify($type) {
   justify-content: $type;
 }
+@mixin justify-start {
+  justify-content: start;
+}
 
 @mixin justify-center {
   justify-content: center;

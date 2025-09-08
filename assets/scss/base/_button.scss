@@ -9,8 +9,30 @@
   box-shadow: 0px 2px 5px 0px #676e7614;
   font-size: func-getPxFromRem(0.875);
   line-height: 1.25;
+  position: relative;
+  transition: all 0.3s ease;
+
   &::after {
     content: "→";
     padding-left: $vars-spacing-sm;
+    transition: all 0.3s ease;
+    position: absolute;
+    inset: 0;
+    @include display-flex-layout(row, nowrap, center, center, 0);
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+  span {
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    &::after {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    span {
+      opacity: 0;
+    }
   }
 }

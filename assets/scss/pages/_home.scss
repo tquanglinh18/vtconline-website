@@ -53,7 +53,7 @@
     @include display-flex-layout(row, nowrap, end, end, 0.5rem);
     @include res-responsive(lg) {
       bottom: 10%;
-      justify-content: start;
+      @include display-justify-start;
       padding: 0 1rem;
     }
     @include res-responsive(xxl) {
@@ -79,21 +79,46 @@
 .vtco-section {
   width: 100%;
   margin: 4% 0;
-  &:first-of-type {
+  position: relative;
+  ˝ &:first-of-type {
     margin-top: 0;
   }
   &:last-of-type {
     margin-bottom: 0;
   }
+  @include res-responsive(lg) {
+    margin: 6% 0;
+  }
+  @include res-responsive(sm) {
+    margin: 8% 0;
+  }
 
-  .vtc-section-wrapper {
+  .vtco-section-wrapper {
     width: 100%;
     max-width: $res-breakpoint-xxl;
     margin: 0 auto;
     padding: 2% $vars-spacing-normal;
-
+    @include display-flex-layout(
+      row,
+      nowrap,
+      center,
+      stretch,
+      $vars-spacing-normal
+    );
     @include res-responsive(lg) {
       max-width: $vars-container-width-tablet;
+      flex-direction: column;
+    }
+
+    &.unLimitWidth {
+      max-width: unset;
+    }
+  }
+
+  .vtco-section-col {
+    width: 50%;
+    @include res-responsive(lg) {
+      width: 100%;
     }
   }
 
@@ -122,6 +147,14 @@
     .section-desc {
       @include txt-mediumText;
       font-size: $txt-text-base;
+      padding: func-getPxFromRem(2.5) 0;
+      @include res-responsive(md) {
+        padding: func-getPxFromRem(1) 0;
+        font-size: func-getPxFromRem(0.875);
+      }
+      @include res-responsive(lg) {
+        padding: func-getPxFromRem(1.5) 0;
+      }
       p {
         margin-bottom: $vars-spacing-md;
         line-height: 1.5;
@@ -130,9 +163,6 @@
 
         &:last-child {
           margin-bottom: 0;
-        }
-        @include res-responsive(md) {
-          font-size: func-getPxFromRem(0.875);
         }
       }
     }
@@ -156,19 +186,11 @@
   background-repeat: no-repeat;
   background-size: auto auto, 78% auto;
   background-position: -8px calc(100% - 8px), top left;
+    margin: 0;
 
-  .vtc-section-wrapper {
-    @include display-flex-layout(
-      row,
-      nowrap,
-      space-between,
-      center,
-      $vars-spacing-normal
-    );
+  .vtco-section-wrapper {
+    justify-content: space-between;
     padding: 8% 1rem 4%;
-    @include res-responsive(lg) {
-      @include display-flex-column;
-    }
   }
   .strategy-text {
     width: 45%;
@@ -180,11 +202,11 @@
   .strategy-highlights {
     width: 35%;
     position: relative;
-    @include res-responsive(xl) {
+    @include res-responsive(xxl) {
       width: 45%;
     }
-    @include res-responsive(xxl) {
-      width: 40%;
+    @include res-responsive(xl) {
+      width: 50%;
     }
     @include res-responsive(lg) {
       width: 80%;
@@ -280,21 +302,24 @@
       aspect-ratio: 1/1;
     }
   }
-
-  .section-desc {
-    padding: func-getPxFromRem(2.5) 0;
-    @include res-responsive(md) {
-      padding: func-getPxFromRem(1) 0;
-    }
-    @include res-responsive(lg) {
-      padding: func-getPxFromRem(1.5) 0;
-    }
-  }
 }
 
 .vtco-ecosystems {
-  .section-desc {
-    max-width: 75%;
+  margin-top: 2%;
+  .vtco-section-wrapper {
+    @include display-flex-column;
+    @include display-justify-start;
+    gap: 0;
+  }
+  .section-info {
+    .section-desc {
+      padding: 0;
+      max-width: 75%;
+      @include res-responsive(lg) {
+        max-width: 100%;
+        padding: 0;
+      }
+    }
   }
 }
 
@@ -364,19 +389,23 @@
 
 .vtco-culture {
   background-image: url("../images/img_decor_culture.png");
-  background-position: 0 85%;
-  background-size: 50% auto;
+  background-position: 0 90%;
+  background-size: 55% auto;
   background-repeat: no-repeat;
-  .vtc-section-wrapper {
+  @include res-responsive(lg) {
+    background-position: 0 100%;
+    background-size: 90% auto;
+  }
+  .vtco-section-wrapper {
     @include display-flex-layout(
       row,
       nowrap,
       space-between,
-      start,
+      center,
       $vars-spacing-normal
     );
     @include res-responsive(lg) {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
   }
   .culture-text {
@@ -387,7 +416,7 @@
   }
 
   .culture-highlights {
-    width: 45%;
+    width: 50%;
     position: relative;
     background-image: url("../images/img_decor_dots.png");
     background-repeat: no-repeat;
@@ -398,27 +427,20 @@
       margin: 4% auto;
     }
     @include res-responsive(sm) {
-      width: 90%;
-      margin: 4% auto;
+      width: 100%;
+      margin: 4% auto 0;
     }
     img {
       width: 100%;
       border-radius: 25% 0 25% 25%;
-      aspect-ratio: 4.5/4;
+      aspect-ratio: 730/608;
       object-fit: cover;
     }
   }
 
   .section-desc {
-    padding: func-getPxFromRem(2.5) 0;
     line-height: 1.5;
     letter-spacing: 1px;
-    @include res-responsive(md) {
-      padding: func-getPxFromRem(1) 0;
-    }
-    @include res-responsive(lg) {
-      padding: func-getPxFromRem(1.5) 0;
-    }
     b {
       @include txt-boldText;
     }
@@ -447,6 +469,134 @@
           background-repeat: no-repeat;
         }
       }
+    }
+  }
+}
+
+.vtc-partner {
+  width: 100%;
+  background: $vars-vtco-50;
+  margin-bottom: 0;
+  .vtco-section-wrapper {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 4% 0;
+    overflow: hidden;
+    @include res-responsive(md) {
+      padding: 6% 0;
+    }
+    @include res-responsive(md) {
+      padding: 8% 0;
+    }
+
+    .owl-vtco-partner {
+      display: flex;
+      gap: $vars-spacing-normal;
+      width: max-content;
+      will-change: transform;
+
+      img {
+        width: auto;
+        height: 34px;
+        object-fit: contain;
+        @include res-responsive(md) {
+          height: 28px;
+        }
+      }
+    }
+  }
+}
+
+.vtco-recruitment {
+  width: 100%;
+  background: $vars-vtco-recruitment-bg;
+  margin-top: 0;
+
+  .vtco-section-col {
+    &:first-child {
+      width: 40%;
+      padding: 6% 1rem;
+      @include res-responsive(lg) {
+        width: 100%;
+      }
+    }
+    &:last-child {
+      width: 55%;
+      @include res-responsive(lg) {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        aspect-ratio: 136/87;
+      }
+    }
+
+    .recruitment-img {
+      width: 50%;
+      position: absolute;
+      top: 0;
+      left: auto;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .vtco-section-wrapper {
+    padding: 0;
+    @include display-justify-between;
+    @include display-align-center;
+    .section-info {
+      color: $vars-white;
+    }
+  }
+
+  .lst-img-recruitment {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: 0;
+    overflow: hidden;
+    @include res-responsive(xl) {
+      width: 100%;
+      height: fit-content;
+      max-height: 75vh;
+      position: relative;
+      overflow: hidden;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 1rem;
+      aspect-ratio: auto;
+    }
+
+    @include res-responsive(lg) {
+      aspect-ratio: 4/3;
+    }
+    @include display-grid-cols(4, $vars-spacing-normal);
+    .recruitment-col {
+      flex: 0 0 25%;
+      img {
+        display: block;
+        height: fit-content;
+        width: 100%;
+        aspect-ratio: 223/480;
+        object-fit: cover;
+        border-radius: 240px;
+        margin-bottom: 8%;
+      }
+      transform: translateY(-21%);
+      &:nth-child(2n) {
+        transform: translateY(-35%);
+      }
+      @include res-responsive(xl) {
+        &:last-child {
+          display: none;
+        }
+      }
+
     }
   }
 }

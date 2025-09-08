@@ -34,7 +34,7 @@ header {
     img {
       width: auto;
       height: 32px;
-      object-fit: containƒ;
+      object-fit: contain;
     }
   }
 
@@ -43,6 +43,10 @@ header {
     ul {
       height: 100%;
       @include display-flex-layout(row, nowrap, center, center, 4%);
+    }
+
+    @include res-responsive(lg) {
+      display: none;
     }
 
     .vtco-nav-item {

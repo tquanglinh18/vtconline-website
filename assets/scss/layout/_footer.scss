@@ -35,7 +35,7 @@
     .footer-title {
       width: 100%;
       margin-bottom: $vars-spacing-lg;
-      @include txt-boldText;
+      @include txt-font-bold;
       position: relative;
       @include res-responsive(lg) {
         &::after {
@@ -58,7 +58,7 @@
           line-height: 1.5;
           transition: all 0.3s ease;
           &:hover {
-            @include txt-semiBoldText;
+            @include txt-font-semibold;
           }
         }
       }

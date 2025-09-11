@@ -16,14 +16,14 @@ $text-xxl: 28px;
   overflow: hidden;
 }
 
-@mixin semiBoldText {
+@mixin font-semibold {
   font-family: "Exo-SemiBold";
 }
 
-@mixin boldText {
+@mixin font-bold {
   font-family: "Exo-Bold";
 }
 
-@mixin mediumText {
+@mixin font-medium {
   font-family: "Exo-Medium";
 }

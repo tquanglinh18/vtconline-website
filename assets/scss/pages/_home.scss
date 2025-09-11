@@ -27,7 +27,7 @@
       transform: translateX(-50%);
       z-index: 1;
       color: $vars-white;
-      @include txt-semiBoldText;
+      @include txt-font-semibold;
       font-size: func-getPxFromRem(2.5);
       padding-right: 16%;
       @include res-responsive(xxl) {
@@ -124,7 +124,7 @@
 
   .section-name {
     font-size: func-getPxFromRem(1.875);
-    @include txt-semiBoldText;
+    @include txt-font-semibold;
     color: $vars-vtco-60;
     margin-bottom: $vars-spacing-normal;
   }
@@ -132,7 +132,7 @@
   .section-info {
     color: $vars-vtco-black;
     .section-title {
-      @include txt-semiBoldText;
+      @include txt-font-semibold;
       font-size: func-getPxFromRem(2.25);
       line-height: 1.25;
       letter-spacing: 1px;
@@ -145,7 +145,7 @@
       }
     }
     .section-desc {
-      @include txt-mediumText;
+      @include txt-font-medium;
       font-size: $txt-text-base;
       padding: func-getPxFromRem(2.5) 0;
       @include res-responsive(md) {
@@ -186,11 +186,11 @@
   background-repeat: no-repeat;
   background-size: auto auto, 78% auto;
   background-position: -8px calc(100% - 8px), top left;
-    margin: 0;
+  margin: 0;
 
   .vtco-section-wrapper {
     justify-content: space-between;
-    padding: 8% 1rem 4%;
+    padding: 6% 1rem 2%;
   }
   .strategy-text {
     width: 45%;
@@ -202,6 +202,7 @@
   .strategy-highlights {
     width: 35%;
     position: relative;
+    @include display-flex-layout(row, nowrap, center, center);
     @include res-responsive(xxl) {
       width: 45%;
     }
@@ -363,7 +364,7 @@
     text-align: center;
     font-size: 1.875vw;
     transition: all 0.3s ease;
-    @include txt-semiBoldText;
+    @include txt-font-semibold;
     @include mixins-linearGradientBlack;
     @include display-flex-layout(column, nowrap, end, center, $vars-spacing-lg);
     @include res-responsive(md) {
@@ -442,7 +443,7 @@
     line-height: 1.5;
     letter-spacing: 1px;
     b {
-      @include txt-boldText;
+      @include txt-font-bold;
     }
     ul {
       list-style: none;
@@ -561,21 +562,21 @@
     left: auto;
     bottom: 0;
     overflow: hidden;
+    @include display-grid-cols(4, $vars-spacing-normal);
     @include res-responsive(xl) {
       width: 100%;
       height: fit-content;
       max-height: 75vh;
       position: relative;
       overflow: hidden;
-      grid-template-columns: repeat(3, 1fr);
       padding: 0 1rem;
       aspect-ratio: auto;
+      grid-template-columns: repeat(3, 1fr);
     }
 
     @include res-responsive(lg) {
       aspect-ratio: 4/3;
     }
-    @include display-grid-cols(4, $vars-spacing-normal);
     .recruitment-col {
       flex: 0 0 25%;
       img {
@@ -596,7 +597,6 @@
           display: none;
         }
       }
-
     }
   }
 }

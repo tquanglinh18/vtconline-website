@@ -160,3 +160,12 @@
 @mixin gap($size) {
   gap: $size;
 }
+
+.flex-between {
+  @include flex-between();
+}
+
+.flex-between-center {
+  @include flex-between();
+  @include justify-center();
+}

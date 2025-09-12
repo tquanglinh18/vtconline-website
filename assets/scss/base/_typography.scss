@@ -16,6 +16,10 @@ $text-xxl: 28px;
   overflow: hidden;
 }
 
+@mixin font-base {
+  font-family: "Exo";
+}
+
 @mixin font-semibold {
   font-family: "Exo-SemiBold";
 }
@@ -26,4 +30,8 @@ $text-xxl: 28px;
 
 @mixin font-medium {
   font-family: "Exo-Medium";
+}
+
+@mixin font-Jersey10 {
+  font-family: "Jersey10";
 }

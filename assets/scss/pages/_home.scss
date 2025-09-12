@@ -93,6 +93,20 @@
     margin: 8% 0;
   }
 
+  &-header {
+    margin-bottom: $vars-spacing-normal;
+    @include display-flex-layout(
+      row,
+      nowrap,
+      space-between,
+      center,
+      $vars-spacing-normal
+    );
+    .section-name {
+      margin-bottom: 0 !important;
+    }
+  }
+
   .vtco-section-wrapper {
     width: 100%;
     max-width: $res-breakpoint-xxl;
@@ -127,6 +141,9 @@
     @include txt-font-semibold;
     color: $vars-vtco-60;
     margin-bottom: $vars-spacing-normal;
+    @include res-responsive(sm) {
+      font-size: func-getPxFromRem(1.25);
+    }
   }
 
   .section-info {

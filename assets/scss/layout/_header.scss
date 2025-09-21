@@ -13,7 +13,7 @@ header {
   height: func-getPxFromRem(4.5);
   background-color: $vars-white;
   border-bottom: 1px solid $vars-grey-200;
-  padding: $vars-spacing-normal;
+  padding: var(--space-base);
 }
 
 .vtco-header-wrapper {
@@ -26,7 +26,7 @@ header {
     nowrap,
     space-between,
     center,
-    $vars-spacing-normal
+    var(--space-base)
   );
 
   .vtco-logo {
@@ -52,10 +52,10 @@ header {
     .vtco-nav-item {
       color: $vars-grey-600;
       transition: all 0.3s ease;
-      padding: $vars-spacing-sm 0;
+      padding: $vars-space-sm 0;
       &:hover,
       &:first-child {
-        color: $vars-vtco-50;
+        color: var(--vtco-primary-50);
       }
       &:first-child {
         font-family: "Exo-SemiBold";

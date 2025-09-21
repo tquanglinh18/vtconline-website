@@ -67,9 +67,9 @@
       height: 10px;
       transition: all 0.3s ease;
       &.swiper-pagination-bullet-active {
-        background: $vars-vtco-60;
+        background: var(--vtco-primary-60);
         opacity: 1;
-        width: $vars-spacing-xl;
+        width: $vars-space-xl;
         border-radius: 10px;
       }
     }
@@ -80,7 +80,7 @@
   width: 100%;
   margin: 4% 0;
   position: relative;
-  ˝ &:first-of-type {
+  &:first-of-type {
     margin-top: 0;
   }
   &:last-of-type {
@@ -94,13 +94,13 @@
   }
 
   &-header {
-    margin-bottom: $vars-spacing-normal;
+    margin-bottom: var(--space-base);
     @include display-flex-layout(
       row,
       nowrap,
       space-between,
       center,
-      $vars-spacing-normal
+      var(--space-base)
     );
     .section-name {
       margin-bottom: 0 !important;
@@ -111,17 +111,24 @@
     width: 100%;
     max-width: $res-breakpoint-xxl;
     margin: 0 auto;
-    padding: 2% $vars-spacing-normal;
+    padding: 2% var(--space-base);
     @include display-flex-layout(
-      row,
+      column,
       nowrap,
       center,
       stretch,
-      $vars-spacing-normal
+      var(--space-base)
     );
+    &.layout-row {
+      flex-direction: row;
+      @include res-responsive(lg) {
+        flex-direction: column;
+      }
+    }
+
     @include res-responsive(lg) {
-      max-width: $vars-container-width-tablet;
-      flex-direction: column;
+      width: 100vw;
+      max-width: 600px;
     }
 
     &.unLimitWidth {
@@ -139,10 +146,15 @@
   .section-name {
     font-size: func-getPxFromRem(1.875);
     @include txt-font-semibold;
-    color: $vars-vtco-60;
-    margin-bottom: $vars-spacing-normal;
+    color: var(--vtco-primary-60);
+    margin-bottom: var(--space-base);
     @include res-responsive(sm) {
       font-size: func-getPxFromRem(1.25);
+    }
+
+    &.style-2 {
+      text-align: center;
+      color: var(--vtco-primary-black);
     }
   }
 
@@ -173,7 +185,7 @@
         padding: func-getPxFromRem(1.5) 0;
       }
       p {
-        margin-bottom: $vars-spacing-md;
+        margin-bottom: $vars-space-md;
         line-height: 1.5;
         line-height: 24px;
         word-spacing: 2px;
@@ -191,7 +203,7 @@
         nowrap,
         start,
         center,
-        $vars-spacing-normal
+        var(--space-base)
       );
     }
   }
@@ -240,12 +252,12 @@
     width: 100%;
     position: relative;
     z-index: 1;
-    @include display-grid-cols(2, $vars-spacing-xxl);
+    @include display-grid-cols(2, $vars-space-xxl);
     @include res-responsive(lg) {
-      gap: $vars-spacing-lg;
+      gap: var(--space-lg);
     }
     @include res-responsive(md) {
-      gap: $vars-spacing-normal;
+      gap: var(--space-base);
     }
     .strategy-item {
       position: relative;
@@ -255,7 +267,7 @@
         nowrap,
         center,
         center,
-        $vars-spacing-xl
+        $vars-space-xl
       );
       background: $vars-grey-100;
       border-radius: 50%;
@@ -343,17 +355,17 @@
 
 .goPlayLstServies {
   width: 100%;
-  margin-top: $vars-spacing-xxl;
+  margin-top: $vars-space-xxl;
   @include display-grid-cols(2, 4% 2%);
   @include res-responsive(md) {
     grid-template-columns: repeat(1, 1fr);
-    gap: $vars-spacing-lg;
+    gap: var(--space-lg);
   }
 }
 
 .goPlayService-card {
   width: 100%;
-  border-radius: $vars-spacing-normal;
+  border-radius: var(--space-base);
   aspect-ratio: 704/334;
   cursor: pointer;
   position: relative;
@@ -362,7 +374,7 @@
   &--bground {
     width: 100%;
     height: 100%;
-    border-radius: $vars-spacing-normal;
+    border-radius: var(--space-base);
     overflow: hidden;
     img {
       width: 100%;
@@ -376,14 +388,14 @@
     padding: 6%;
     inset: 0;
     z-index: 1;
-    border-radius: $vars-spacing-normal;
+    border-radius: var(--space-base);
     color: $vars-white;
     text-align: center;
     font-size: 1.875vw;
     transition: all 0.3s ease;
     @include txt-font-semibold;
     @include mixins-linearGradientBlack;
-    @include display-flex-layout(column, nowrap, end, center, $vars-spacing-lg);
+    @include display-flex-layout(column, nowrap, end, center, var(--space-lg));
     @include res-responsive(md) {
       font-size: 5vw;
     }
@@ -420,10 +432,10 @@
       nowrap,
       space-between,
       center,
-      $vars-spacing-normal
+      var(--space-base)
     );
     @include res-responsive(lg) {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
   }
   .culture-text {
@@ -441,10 +453,6 @@
     background-size: auto auto;
     background-position: top left;
     @include res-responsive(lg) {
-      width: 80%;
-      margin: 4% auto;
-    }
-    @include res-responsive(sm) {
       width: 100%;
       margin: 4% auto 0;
     }
@@ -466,8 +474,8 @@
       list-style: none;
       margin: 1rem;
       li {
-        padding-left: $vars-spacing-xxl;
-        margin-bottom: $vars-spacing-sm;
+        padding-left: $vars-space-xxl;
+        margin-bottom: $vars-space-sm;
         &:last-child {
           margin-bottom: 0;
         }
@@ -493,7 +501,7 @@
 
 .vtc-partner {
   width: 100%;
-  background: $vars-vtco-50;
+  background: var(--vtco-primary-50);
   margin-bottom: 0;
   .vtco-section-wrapper {
     width: 100%;
@@ -510,7 +518,7 @@
 
     .owl-vtco-partner {
       display: flex;
-      gap: $vars-spacing-normal;
+      gap: var(--space-base);
       width: max-content;
       will-change: transform;
 
@@ -579,7 +587,7 @@
     left: auto;
     bottom: 0;
     overflow: hidden;
-    @include display-grid-cols(4, $vars-spacing-normal);
+    @include display-grid-cols(4, var(--space-base));
     @include res-responsive(xl) {
       width: 100%;
       height: fit-content;

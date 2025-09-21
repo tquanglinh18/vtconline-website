@@ -1,0 +1,216 @@
+@use "../global" as *;
+
+.recruitment-section {
+  width: 100%;
+  position: relative;
+  margin-top: 4%;
+  .section-name {
+    margin-bottom: 2%;
+  }
+  .vtco-section-wrapper {
+    @include res-responsive(lg) {
+      padding: 0;
+      gap: 0;
+    }
+  }
+  .recruitment-content {
+    width: 100%;
+    max-width: 1440px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    padding: var(--space-base);
+
+    @include res-responsive(lg) {
+      position: relative;
+      top: 0%;
+      transform: translateY(0%);
+      padding: 0;
+    }
+
+    .frame-wrapper {
+      width: 45%;
+      max-width: 588px;
+      padding: 2.5rem 2rem;
+      background: #ffffffe5;
+      box-shadow: 0px 15px 35px 0px #676e7614;
+      backdrop-filter: blur(24px);
+      border-radius: var(--space-xl);
+      @include res-responsive(xl) {
+        width: 100%;
+        max-width: 60%;
+      }
+      @include res-responsive(lg) {
+        width: 100%;
+        max-width: 100%;
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        border-radius: unset;
+        padding: 1.5rem 1rem;
+      }
+    }
+    .recruitment-title {
+      font-size: 48px;
+      @include txt-font-semibold;
+      margin-bottom: 2rem;
+      color: var(--vtco-primary-60);
+      @include res-responsive(lg) {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      @include res-responsive(sm) {
+        font-size: 24px;
+      }
+    }
+
+    .recruitment-desc {
+      color: var(--grey-600);
+      @include txt-font-medium;
+      @include res-responsive(sm) {
+        font-size: 14px;
+      }
+    }
+  }
+  .recruitment-image {
+    width: 75%;
+    margin-left: auto;
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1075/500;
+      object-fit: cover;
+      border-radius: var(--space-xl);
+      @include res-responsive(lg) {
+        border-radius: 0;
+        aspect-ratio: 744/500;
+      }
+
+      @include res-responsive(md) {
+        aspect-ratio: 375/252;
+      }
+    }
+
+    @include res-responsive(lg) {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.why-join-section {
+  width: 100%;
+  background-color: var(--vtco-primary-10);
+  padding: 3% 0;
+  .lst-why-card {
+    width: 100%;
+    @include display-grid-cols(4, var(--space-base));
+    @include res-responsive(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include res-responsive(sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .why-card {
+    width: 100%;
+    max-width: 343px;
+    margin: 0 auto;
+    padding: var(--space-xxl) var(--space-xl);
+    @include display-flex-layout(
+      column,
+      nowrap,
+      start,
+      center,
+      var(--space-base)
+    );
+    background-color: var(--white);
+    box-shadow: 0px 15px 35px 0px #676e7614;
+    box-shadow: 0px 5px 15px 0px #0000001f;
+    border-radius: 16px;
+    &-header {
+      img {
+        width: 64px;
+        height: 64px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+      }
+    }
+
+    &-body {
+      text-align: center;
+      color: var(--vtco-primary-black);
+      .card-title {
+        font-size: 24px;
+        @include txt-font-semibold;
+        word-spacing: 1px;
+        min-height: 72px;
+        @include display-flex-center;
+        @include res-responsive(sm) {
+          min-height: unset;
+        }
+      }
+
+      .card-desc {
+        margin-top: var(--space-lg);
+      }
+    }
+  }
+}
+
+.jobs-section {
+  margin-bottom: 4% !important;
+  .vtco-section-wrapper {
+    max-width: 992px;
+    padding: 0 var(--space-base);
+  }
+  .section-name {
+    text-align: start !important;
+    margin-bottom: 0;
+  }
+
+  .jobs-table {
+    width: 100%;
+    table {
+      width: 100%;
+      border: none;
+      thead {
+        th {
+          width: 20%;
+          padding: var(--space-md) 0;
+          text-align: center;
+          color: var(--grey-600);
+          border-bottom: 1px solid var(--grey-200);
+          @include txt-font-semibold;
+          &:first-child {
+            width: 60%;
+            text-align: start;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          color: var(--grey-600);
+          padding: var(--space-base) 0;
+          border-bottom: 1px solid var(--grey-200);
+          text-align: center;
+          &:first-child {
+            color: var(--vtco-primary-black);
+            @include txt-font-semibold;
+            text-align: start;
+            small {
+              color: var(--grey-600);
+              @include txt-font-regular;
+              margin-top: var(--space-md);
+            }
+          }
+        }
+      }
+    }
+  }
+}

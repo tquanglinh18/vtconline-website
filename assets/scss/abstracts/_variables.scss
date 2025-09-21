@@ -1,31 +1,59 @@
-// _variables.scss
-
-// Color
-$vtco-60: #72ad37;
-$vtco-50: #85c446;
-$vtco-30: #c2e2a2;
-$vtco-10: #EEF7E4;
+// Brand Colors
+$vtco-primary-60: #72ad37;
+$vtco-primary-50: #85c446;
+$vtco-primary-30: #c2e2a2;
+$vtco-primary-10: #eef7e4;
 $vtco-black: #272727;
 
 $vtco-recruitment-bg: #263425;
 
-$grey-800: #383F45;
-$grey-700: #454C52;
+// Grey Scale
+$grey-800: #383f45;
+$grey-700: #454c52;
 $grey-600: #596066;
 $grey-200: #e5e7ea;
 $grey-100: #f6f7f9;
 
+// Neutral & Base
 $white: #ffffff;
-
-$neutral-20: #D9DDEA;
+$black: #000000;
+$neutral-20: #d9ddea;
 
 // Spacing
-$spacing-sm: 8px;
-$spacing-md: 12px;
-$spacing-normal: 16px;
-$spacing-lg: 20px;
-$spacing-xl: 24px;
-$spacing-xxl: 32px;
+$space-sm: 8px;
+$space-md: 12px;
+$space-base: 16px;
+$space-lg: 20px;
+$space-xl: 24px;
+$space-xxl: 32px;
 
-// Max-width
-$container-width-tablet: 600px;
+:root {
+  // Brand
+  --vtco-primary-60: #{$vtco-primary-60};
+  --vtco-primary-50: #{$vtco-primary-50};
+  --vtco-primary-30: #{$vtco-primary-30};
+  --vtco-primary-10: #{$vtco-primary-10};
+  --vtco-black: #{$vtco-black};
+
+  --vtco-recruitment-bg: #{$vtco-recruitment-bg};
+
+  // Grey Scale
+  --grey-800: #{$grey-800};
+  --grey-700: #{$grey-700};
+  --grey-600: #{$grey-600};
+  --grey-200: #{$grey-200};
+  --grey-100: #{$grey-100};
+
+  // Neutral & Base
+  --white: #{$white};
+  --black: #{$black};
+  --neutral-20: #{$neutral-20};
+
+  // Spacing
+  --space-sm: #{$space-sm};
+  --space-md: #{$space-md};
+  --space-base: #{$space-base};
+  --space-lg: #{$space-lg};
+  --space-xl: #{$space-xl};
+  --space-xxl: #{$space-xxl};
+}

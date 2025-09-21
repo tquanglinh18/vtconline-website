@@ -1,9 +1,9 @@
 @use "../global" as *;
 
 .btn-normal {
-  padding: $vars-spacing-md $vars-spacing-lg;
-  background: $vars-vtco-50;
-  border-radius: $vars-spacing-sm;
+  padding: $vars-space-md var(--space-lg);
+  background: var(--vtco-primary-50);
+  border-radius: $vars-space-sm;
   color: $vars-white;
   border: none;
   box-shadow: 0px 2px 5px 0px #676e7614;
@@ -14,7 +14,7 @@
 
   &::after {
     content: "→";
-    padding-left: $vars-spacing-sm;
+    padding-left: $vars-space-sm;
     transition: all 0.3s ease;
     position: absolute;
     inset: 0;
@@ -34,5 +34,11 @@
     span {
       opacity: 0;
     }
+  }
+
+  &--trans {
+    background-color: var(--grey-50);
+    color: var(--vtco-primary-black);
+    border: 1px solid #676e7614;
   }
 }

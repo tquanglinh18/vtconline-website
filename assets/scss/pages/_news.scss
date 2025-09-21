@@ -2,10 +2,7 @@
 
 .section-header {
   margin: 0 0 4% 0;
-  background-color: $vars-vtco-10;
-  .vtco-section-wrapper {
-    flex-direction: column;
-  }
+  background-color: var(--vtco-primary-10);
   .section-name {
     color: $vars-vtco-black;
   }
@@ -13,7 +10,7 @@
 
 .news-card {
   width: 100%;
-  @include display-flex-layout(row, nowrap, start, start, $vars-spacing-normal);
+  @include display-flex-layout(row, nowrap, start, start, var(--space-base));
   .news-content {
     width: 66%;
     padding: 2% 0;
@@ -30,7 +27,7 @@
       @include txt-font-semibold;
       @include txt-max-line(2);
       line-height: 1.5;
-      margin-bottom: $vars-spacing-sm;
+      margin-bottom: $vars-space-sm;
       @include res-responsive(md) {
         font-size: 14px;
       }
@@ -39,14 +36,14 @@
     .news-desc {
       color: $vars-grey-700;
       font-size: $txt-text-base;
-      @include txt-font-base;
+      @include txt-font-regular;
       @include txt-max-line(1);
     }
   }
   .news-thumb {
     width: 33%;
     img {
-      border-radius: $vars-spacing-normal;
+      border-radius: var(--space-base);
       width: 100%;
       height: auto;
       object-fit: cover;
@@ -54,7 +51,7 @@
     }
   }
 
-  &.news-header {
+  &.news-featured {
     @include res-responsive(lg) {
       flex-direction: column;
     }
@@ -66,14 +63,14 @@
       .posted-date {
         color: $vars-grey-700;
         @include txt-font-medium;
-        margin-bottom: $vars-spacing-sm;
+        margin-bottom: $vars-space-sm;
       }
 
       .news-title {
         color: $vars-vtco-black;
         font-size: 2rem;
         @include txt-max-line(3);
-        margin-bottom: $vars-spacing-normal;
+        margin-bottom: var(--space-base);
         line-height: 1.25;
         @include res-responsive(lg) {
           font-size: 30px;
@@ -86,7 +83,7 @@
       .news-desc {
         color: $vars-grey-700;
         font-size: $txt-text-base;
-        @include txt-font-base;
+        @include txt-font-regular;
         @include txt-max-line(4);
         @include res-responsive(md) {
           font-size: 14px;
@@ -118,11 +115,14 @@
       width: 100%;
     }
     .news-card {
-      padding: $vars-spacing-xl 0;
+      padding: $vars-space-xl 0;
       border-top: 1px solid $vars-neutral-20;
       &:first-child {
         border-top: none;
         padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
       }
       @include res-responsive(md) {
         .news-desc {
@@ -148,11 +148,14 @@
     }
     .btn-normal {
       @include res-responsive(md) {
-        padding: $vars-spacing-sm $vars-spacing-normal;
+        padding: $vars-space-sm var(--space-base);
       }
     }
     .news-card {
-      margin-bottom: $vars-spacing-lg;
+      margin-bottom: var(--space-lg);
+      &:last-child {
+        margin-bottom: 0;
+      }
       .news-thumb {
         @include res-responsive(lg) {
           width: fit-content;
@@ -179,6 +182,95 @@
       }
       .news-desc {
         display: none;
+      }
+    }
+  }
+}
+
+.page-breadcrumb {
+  width: 100%;
+  @include display-flex-layout(row, nowrap, start, center, var(--space-sm));
+  a {
+    color: var(--vtco-primary-black);
+  }
+}
+
+.news-section {
+  .vtco-section-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.article-wrap {
+  @include display-flex-layout(column, nowrap, start, start, var(--space-sm));
+
+  .article-content {
+    .article-title {
+      width: 100%;
+      margin-bottom: var(--space-base);
+      @include txt-font-semibold;
+      font-size: 2rem;
+      line-height: 1.25;
+      @include res-responsive(md) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .article-meta {
+      width: 100%;
+      margin-bottom: var(--space-lg);
+      @include display-flex-layout(
+        row,
+        nowrap,
+        space-between,
+        center,
+        var(--space-base)
+      );
+
+      p {
+        @include display-flex-layout(
+          row,
+          nowrap,
+          space-between,
+          center,
+          var(--space-xs)
+        );
+        img {
+          margin-right: 0.25rem;
+        }
+      }
+
+      .article-author {
+        @include txt-font-medium;
+        span {
+          color: var(--vtco-primary-60);
+          margin-left: 0.25rem;
+        }
+      }
+    }
+  }
+
+  .article-related {
+    .news-card {
+      flex-direction: column;
+      gap: var(--space-xs);
+      .news-thumb {
+        width: 100%;
+      }
+      .news-content {
+        width: 100%;
+      }
+    }
+
+    .article-related-wrapper {
+      @include display-grid-cols(4, var(--space-base));
+      @include res-responsive(lg) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include res-responsive(sm) {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   }

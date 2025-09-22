@@ -26,7 +26,7 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 1;
-      color: $vars-white;
+      color: var(--white);
       @include txt-font-semibold;
       font-size: func-getPxFromRem(2.5);
       padding-right: 16%;
@@ -60,7 +60,7 @@
       padding: 0 1rem;
     }
     .swiper-pagination-bullet {
-      background: $vars-white;
+      background: var(--white);
       opacity: 0.3;
       aspect-ratio: 1/1;
       width: 10px;
@@ -69,7 +69,7 @@
       &.swiper-pagination-bullet-active {
         background: var(--vtco-primary-60);
         opacity: 1;
-        width: $vars-space-xl;
+        width: var(--space-xl);
         border-radius: 10px;
       }
     }
@@ -78,23 +78,17 @@
 
 .vtco-section {
   width: 100%;
-  margin: 4% 0;
+  margin-bottom: 6%;
   position: relative;
-  &:first-of-type {
-    margin-top: 0;
-  }
-  &:last-of-type {
-    margin-bottom: 0;
-  }
   @include res-responsive(lg) {
-    margin: 6% 0;
+    margin-bottom: 8%;
   }
   @include res-responsive(sm) {
-    margin: 8% 0;
+    margin-bottom: 10%;
   }
 
   &-header {
-    margin-bottom: var(--space-base);
+    margin: var(--space-base) 0;
     @include display-flex-layout(
       row,
       nowrap,
@@ -107,11 +101,26 @@
     }
   }
 
+  &-body {
+    width: 100%;
+  }
+
+  &-footer {
+    width: 100%;
+    @include display-flex-layout(
+      row,
+      nowrap,
+      center,
+      center,
+      var(--space-base)
+    );
+  }
+
   .vtco-section-wrapper {
     width: 100%;
     max-width: $res-breakpoint-xxl;
     margin: 0 auto;
-    padding: 2% var(--space-base);
+    padding: var(--space-base);
     @include display-flex-layout(
       column,
       nowrap,
@@ -159,7 +168,7 @@
   }
 
   .section-info {
-    color: $vars-vtco-black;
+    color: var(--vtco-primary-black);
     .section-title {
       @include txt-font-semibold;
       font-size: func-getPxFromRem(2.25);
@@ -177,18 +186,17 @@
       @include txt-font-medium;
       font-size: $txt-text-base;
       padding: func-getPxFromRem(2.5) 0;
+      @include res-responsive(lg) {
+        padding: func-getPxFromRem(1.5) 0;
+      }
       @include res-responsive(md) {
         padding: func-getPxFromRem(1) 0;
         font-size: func-getPxFromRem(0.875);
       }
-      @include res-responsive(lg) {
-        padding: func-getPxFromRem(1.5) 0;
-      }
       p {
-        margin-bottom: $vars-space-md;
+        margin-bottom: var(--space-md);
         line-height: 1.5;
-        line-height: 24px;
-        word-spacing: 2px;
+        word-spacing: 1px;
 
         &:last-child {
           margin-bottom: 0;
@@ -215,11 +223,18 @@
   background-repeat: no-repeat;
   background-size: auto auto, 78% auto;
   background-position: -8px calc(100% - 8px), top left;
-  margin: 0;
+  margin-bottom: 0;
 
   .vtco-section-wrapper {
     justify-content: space-between;
-    padding: 6% 1rem 2%;
+    padding: 6% 1rem;
+    @include res-responsive(lg) {
+      padding: 8% 1rem;
+    }
+
+    @include res-responsive(sm) {
+      padding: 10% 1rem;
+    }
   }
   .strategy-text {
     width: 45%;
@@ -229,12 +244,9 @@
   }
 
   .strategy-highlights {
-    width: 35%;
+    width: 45%;
     position: relative;
     @include display-flex-layout(row, nowrap, center, center);
-    @include res-responsive(xxl) {
-      width: 45%;
-    }
     @include res-responsive(xl) {
       width: 50%;
     }
@@ -244,7 +256,6 @@
     }
     @include res-responsive(sm) {
       width: 90%;
-      margin: 4% auto;
     }
   }
 
@@ -252,7 +263,9 @@
     width: 100%;
     position: relative;
     z-index: 1;
-    @include display-grid-cols(2, $vars-space-xxl);
+    align-content: center;
+    justify-items: center;
+    @include display-grid-cols(2, var(--space-xxl));
     @include res-responsive(lg) {
       gap: var(--space-lg);
     }
@@ -261,21 +274,26 @@
     }
     .strategy-item {
       position: relative;
+      width: 100%;
+      max-width: 280px;
       aspect-ratio: 1/1;
       @include display-flex-layout(
         column,
         nowrap,
         center,
         center,
-        $vars-space-xl
+        var(--space-xl)
       );
-      background: $vars-grey-100;
+      background: var(--grey-100);
       border-radius: 50%;
-      color: $vars-vtco-black;
+      // border: 10px solid var(--vtco-primary-40);
+      color: var(--vtco-primary-black);
       transition: all 0.5s ease;
       overflow: hidden;
       cursor: pointer;
-
+      @include res-responsive(md) {
+        gap: 12px;
+      }
       &--img {
         transition: all 0.5s ease;
         img {
@@ -285,7 +303,7 @@
           display: block;
           transition: all 0.5s ease;
           @include res-responsive(sm) {
-            max-width: 60%;
+            max-width: 50%;
           }
         }
       }
@@ -295,11 +313,14 @@
         font-size: $txt-text-lg;
         font-family: "Exo-SemiBold";
         transition: all 0.5s ease;
+        @include res-responsive(sm) {
+          font-size: 16px;
+        }
       }
 
       &:hover {
         @include mixins-linearGradientVtco;
-        color: $vars-white;
+        color: var(--white);
         transform: scale(1.05);
 
         .strategy-item--img {
@@ -312,15 +333,31 @@
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          font-size: $txt-text-xxl;
+          font-size: 42px;
+          word-break: break-all;
           @include res-responsive(md) {
-            font-size: $txt-text-lg;
+            font-size: $txt-text-xxl;
           }
         }
       }
+      &::before {
+        content: "";
+        max-width: 25%;
+        position: absolute;
+        inset: 0;
+        z-index: 999;
+        top: 6px;
+        left: 15%;
+        background-image: url("../images/ic_line_strategy_item.png");
+        background-position: top left;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
     }
   }
-
+  .section-header .section-name {
+    color: #272727;
+  }
   .strategy-decor {
     position: absolute;
     inset: 0;
@@ -335,11 +372,16 @@
 }
 
 .vtco-ecosystems {
-  margin-top: 2%;
+  background-image: url("../images/img_decor_dots.png");
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: bottom right;
+  margin-bottom: 0;
   .vtco-section-wrapper {
     @include display-flex-column;
     @include display-justify-start;
     gap: 0;
+    padding-bottom: 6%;
   }
   .section-info {
     .section-desc {
@@ -355,8 +397,8 @@
 
 .goPlayLstServies {
   width: 100%;
-  margin-top: $vars-space-xxl;
-  @include display-grid-cols(2, 4% 2%);
+  margin-top: var(--space-xxl);
+  @include display-grid-cols(2, var(--space-xl) var(--space-xl));
   @include res-responsive(md) {
     grid-template-columns: repeat(1, 1fr);
     gap: var(--space-lg);
@@ -389,7 +431,7 @@
     inset: 0;
     z-index: 1;
     border-radius: var(--space-base);
-    color: $vars-white;
+    color: var(--white);
     text-align: center;
     font-size: 1.875vw;
     transition: all 0.3s ease;
@@ -400,18 +442,21 @@
       font-size: 5vw;
     }
     .service-name {
-      // transform: translateY(50%);
       transition: all 0.5s ease;
+      position: absolute;
+      bottom: 0%;
+      transform: translateY(-75%);
     }
     &:hover {
       @include mixins-linearGradientVtco;
       justify-content: center;
-      font-size: 2.125vw;
+      font-size: 2.5vw;
       @include res-responsive(md) {
         font-size: 7vw;
       }
       .service-name {
-        transform: translateY(0);
+        bottom: 50%;
+        transform: translateY(50%);
       }
     }
   }
@@ -419,9 +464,15 @@
 
 .vtco-culture {
   background-image: url("../images/img_decor_culture.png");
-  background-position: 0 90%;
-  background-size: 55% auto;
+  background-position: 0 100%;
+  background-size: 53% auto;
   background-repeat: no-repeat;
+  @include res-responsive(xxl) {
+    background-position: 0 90%;
+  }
+  @include res-responsive(xl) {
+    background-position: 0 80%;
+  }
   @include res-responsive(lg) {
     background-position: 0 100%;
     background-size: 90% auto;
@@ -439,7 +490,7 @@
     }
   }
   .culture-text {
-    width: 45%;
+    width: calc(40% + 1.5rem);
     @include res-responsive(lg) {
       width: 100%;
     }
@@ -450,7 +501,7 @@
     position: relative;
     background-image: url("../images/img_decor_dots.png");
     background-repeat: no-repeat;
-    background-size: auto auto;
+    background-size: 15% auto;
     background-position: top left;
     @include res-responsive(lg) {
       width: 100%;
@@ -466,16 +517,16 @@
 
   .section-desc {
     line-height: 1.5;
-    letter-spacing: 1px;
+    color: var(--grey-600);
     b {
       @include txt-font-bold;
     }
     ul {
       list-style: none;
-      margin: 1rem;
+      margin: 1rem 0;
       li {
-        padding-left: $vars-space-xxl;
-        margin-bottom: $vars-space-sm;
+        padding-left: var(--space-xxl);
+        margin-bottom: var(--space-sm);
         &:last-child {
           margin-bottom: 0;
         }
@@ -500,7 +551,6 @@
 }
 
 .vtc-partner {
-  width: 100%;
   background: var(--vtco-primary-50);
   margin-bottom: 0;
   .vtco-section-wrapper {
@@ -535,9 +585,8 @@
 }
 
 .vtco-recruitment {
-  width: 100%;
-  background: $vars-vtco-recruitment-bg;
-  margin-top: 0;
+  background: var(--vtco-recruitment-bg);
+  margin-bottom: 0;
 
   .vtco-section-col {
     &:first-child {
@@ -575,7 +624,7 @@
     @include display-justify-between;
     @include display-align-center;
     .section-info {
-      color: $vars-white;
+      color: var(--white);
     }
   }
 

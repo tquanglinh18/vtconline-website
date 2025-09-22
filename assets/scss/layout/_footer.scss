@@ -3,10 +3,10 @@
 
 .vtco-footer {
   width: 100%;
-  background-color: $vars-white;
-  color: $vars-grey-800;
+  background-color: var(--white);
+  color: var(--grey-800);
   font-size: 14px;
-  border-top: 1px solid $vars-grey-200;
+  border-top: 1px solid var(--grey-200);
 
   .vtco-footer-wrapper {
     width: 100%;
@@ -42,7 +42,8 @@
       position: relative;
       @include res-responsive(lg) {
         &::after {
-          content: "∨";
+          font-family: "FontAwesome";
+          content: "\f0d7";
           position: absolute;
           right: 0.5rem;
           top: 50%;
@@ -56,7 +57,7 @@
       }
       ul {
         li {
-          padding: $vars-space-sm 0;
+          padding: var(--space-sm) 0;
           transition: all 0.3s ease;
           line-height: 1.5;
           transition: all 0.3s ease;

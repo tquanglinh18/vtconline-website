@@ -1,20 +1,21 @@
 @use "../global" as *;
 
 .btn-normal {
-  padding: $vars-space-md var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   background: var(--vtco-primary-50);
-  border-radius: $vars-space-sm;
-  color: $vars-white;
+  border-radius: var(--space-sm);
+  color: var(--white);
   border: none;
   box-shadow: 0px 2px 5px 0px #676e7614;
   font-size: func-getPxFromRem(0.875);
   line-height: 1.25;
   position: relative;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &::after {
     content: "→";
-    padding-left: $vars-space-sm;
+    padding-left: var(--space-sm);
     transition: all 0.3s ease;
     position: absolute;
     inset: 0;

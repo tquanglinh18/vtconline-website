@@ -11,8 +11,8 @@ header {
 .vtco-header {
   width: 100%;
   height: func-getPxFromRem(4.5);
-  background-color: $vars-white;
-  border-bottom: 1px solid $vars-grey-200;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--grey-200);
   padding: var(--space-base);
 }
 
@@ -50,9 +50,9 @@ header {
     }
 
     .vtco-nav-item {
-      color: $vars-grey-600;
+      color: var(--grey-600);
       transition: all 0.3s ease;
-      padding: $vars-space-sm 0;
+      padding: var(--space-sm) 0;
       &:hover,
       &:first-child {
         color: var(--vtco-primary-50);
@@ -63,6 +63,4 @@ header {
     }
   }
 
-  .vtco-action {
-  }
 }

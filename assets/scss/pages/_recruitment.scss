@@ -3,9 +3,12 @@
 .recruitment-section {
   width: 100%;
   position: relative;
-  margin-top: 4%;
+  padding: 4% 0;
   .section-name {
     margin-bottom: 2%;
+  }
+  @include res-responsive(lg) {
+    padding: 0;
   }
   .vtco-section-wrapper {
     @include res-responsive(lg) {
@@ -17,20 +20,24 @@
     width: 100%;
     max-width: 1440px;
     position: absolute;
+    margin: 0 auto;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: transparent;
     padding: var(--space-base);
 
     @include res-responsive(lg) {
       position: relative;
       top: 0%;
-      transform: translateY(0%);
+      left: 0;
+      transform: translate(0%, 0%);
       padding: 0;
+      text-align: center;
     }
 
     .frame-wrapper {
-      width: 45%;
+      width: 40%;
       max-width: 588px;
       padding: 2.5rem 2rem;
       background: #ffffffe5;
@@ -39,7 +46,7 @@
       border-radius: var(--space-xl);
       @include res-responsive(xl) {
         width: 100%;
-        max-width: 60%;
+        max-width: 55%;
       }
       @include res-responsive(lg) {
         width: 100%;
@@ -104,7 +111,10 @@
 .why-join-section {
   width: 100%;
   background-color: var(--vtco-primary-10);
-  padding: 3% 0;
+  padding: 4% 0;
+  @include res-responsive(sm) {
+    padding: 8% 0;
+  }
   .lst-why-card {
     width: 100%;
     @include display-grid-cols(4, var(--space-base));
@@ -163,10 +173,12 @@
 }
 
 .jobs-section {
-  margin-bottom: 4% !important;
   .vtco-section-wrapper {
     max-width: 992px;
     padding: 0 var(--space-base);
+    @include res-responsive(lg) {
+      padding: var(--space-base);
+    }
   }
   .section-name {
     text-align: start !important;
@@ -189,6 +201,15 @@
           &:first-child {
             width: 60%;
             text-align: start;
+            @include res-responsive(sm) {
+              width: 100%;
+              display: block;
+            }
+          }
+
+          @include res-responsive(sm) {
+            display: none;
+            width: 0;
           }
         }
       }
@@ -208,6 +229,14 @@
               @include txt-font-regular;
               margin-top: var(--space-md);
             }
+            @include res-responsive(sm) {
+              width: 100%;
+              display: block;
+            }
+          }
+          @include res-responsive(sm) {
+            display: none;
+            width: 0;
           }
         }
       }

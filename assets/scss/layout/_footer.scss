@@ -37,17 +37,18 @@
   .footer-col {
     .footer-title {
       width: 100%;
-      margin-bottom: var(--space-lg);
+      // margin-bottom: var(--space-lg);
       @include txt-font-bold;
       position: relative;
       @include res-responsive(lg) {
         &::after {
-          font-family: "FontAwesome";
-          content: "\f0d7";
+          content: "▶";
+          // rotate: 90deg;
           position: absolute;
           right: 0.5rem;
           top: 50%;
-          transform: translateY(-50%);
+          transform: translateY(-50%) rotate(90deg);
+          font-size: 8px;
         }
       }
     }

@@ -123,13 +123,19 @@
   margin-bottom: 4%;
 
   .vtco-section-body {
-    @include display-flex-layout(row, nowrap, space-between, start, var(--space-sm));
+    @include display-flex-layout(
+      row,
+      nowrap,
+      space-between,
+      start,
+      var(--space-sm)
+    );
   }
 
   .vtco-section-footer {
     margin-top: 2%;
   }
-  
+
   .vtco-section-wrapper {
     @include display-flex-between;
     align-items: start;
@@ -252,7 +258,6 @@
         center,
         var(--space-base)
       );
-
       p {
         @include display-flex-layout(
           row,
@@ -268,6 +273,9 @@
 
       .article-author {
         @include txt-font-medium;
+        @include res-responsive(md) {
+          display: none;
+        }
         span {
           color: var(--vtco-primary-60);
           margin-left: 0.25rem;

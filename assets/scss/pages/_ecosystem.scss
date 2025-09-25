@@ -1,0 +1,187 @@
+@use "../global" as *;
+
+.vtco-online-payment {
+  padding: 0;
+  margin-bottom: 0;
+  background-color: #545aea;
+  background-image: url("../images/bg_dot_online_payment.png"),
+    url("../images/bg_ecosystem_online_payment.png");
+  background-position: left center, right top;
+  background-size: auto auto, 65% auto;
+  background-repeat: no-repeat, no-repeat;
+  @include res-responsive(lg) {
+    width: 100%;
+    background-position: left center, right center;
+    background-size: auto auto, auto 100%;
+  }
+
+  .vtco-section-wrapper {
+    padding: 0 1rem;
+    justify-content: space-around;
+  }
+  .section-text {
+    width: 45%;
+    color: var(--white);
+    padding: 8% 1rem;
+    @include res-responsive(xxl) {
+      padding: 4% 1rem;
+    }
+    @include res-responsive(lg) {
+      width: 100%;
+    }
+    .section-name {
+      color: white;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 60px);
+    }
+
+    .section-desc {
+      width: 65%;
+      @include res-responsive(xl) {
+        width: 85%;
+      }
+
+      @include res-responsive(lg) {
+        width: 100%;
+      }
+
+      .desc-highlight {
+        margin-top: 25%;
+        padding-top: 6%;
+        position: relative;
+        @include res-responsive(lg) {
+          margin-top: 8%;
+          padding-top: 4%;
+        }
+        &::after {
+          width: 35%;
+          height: 4px;
+          background-color: var(--vtco-second-50);
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+
+        &::before {
+          width: 15%;
+          height: 4px;
+          background-color: #27b0f5;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          border-right: 2px solid #545aea;
+        }
+      }
+    }
+  }
+
+  .section-highlights {
+    width: 45%;
+    position: relative;
+    @include display-flex-layout(
+      column,
+      nowrap,
+      center,
+      start,
+      var(--sapce-base)
+    );
+    background-image: url("../images/ic_phone_gobank.png"),
+      url("../images/bg_dot_online_payment_rotate.png");
+    background-position: center bottom, bottom center;
+    background-size: contain, auto auto;
+    background-repeat: no-repeat, no-repeat;
+    @include res-responsive(xxl) {
+      justify-content: end;
+      width: 50%;
+      padding-bottom: 10%;
+    }
+    @include res-responsive(lg) {
+      width: 100%;
+      background-position: right bottom, right bottom;
+    }
+
+    @include res-responsive(md) {
+      background-position: top center, bottom right;
+      background-size: contain, 40% auto;
+    }
+
+    .criteria-wraper {
+      width: 55%;
+      padding: 10% 0 0;
+
+      @include res-responsive(lg) {
+        padding: 6% 1rem;
+        width: 75%;
+      }
+
+      @include res-responsive(md) {
+        padding: 75% 1rem 6%;
+        width: 100%;
+      }
+    }
+
+    .criteria-item {
+      width: 100%;
+      padding: 10px 12px;
+      position: relative;
+      color: var(--vtco-black);
+      border-radius: 10px;
+      background-color: #eefac7;
+      @include txt-font-semibold;
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: var(--space-xl);
+      z-index: 1;
+      &::before {
+        height: 24px;
+        width: 24px;
+        content: "";
+        aspect-ratio: 1/1;
+        background-image: url("../images/ic_check_double.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      &::after {
+        border: 6px solid #eef7e44d;
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: 16px;
+        z-index: 2;
+      }
+
+      @include res-responsive(md) {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      &:nth-child(1) {
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        width: 90%;
+      }
+
+      &:nth-child(3) {
+        width: 80%;
+      }
+
+      &:nth-child(4) {
+        width: 65%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

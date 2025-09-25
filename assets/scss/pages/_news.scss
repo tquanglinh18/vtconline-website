@@ -177,6 +177,9 @@
     @include res-responsive(lg) {
       width: 100%;
     }
+    .vtco-section-header {
+      margin-top: 0;
+    }
     .btn-normal {
       @include res-responsive(md) {
         padding: var(--space-sm) var(--space-base);
@@ -308,3 +311,4 @@
     }
   }
 }
+

@@ -37,7 +37,7 @@
   .footer-col {
     .footer-title {
       width: 100%;
-      // margin-bottom: var(--space-lg);
+      cursor: pointer;
       @include txt-font-bold;
       position: relative;
       @include res-responsive(lg) {
@@ -53,8 +53,21 @@
       }
     }
     .footer-content {
+      margin-top: var(--space-base);
       @include res-responsive(lg) {
         display: none;
+      }
+
+      &.always-show {
+        display: block !important;
+        margin-top: var(--space-md);
+        ul {
+          li {
+            &:hover {
+              cursor: default;
+            }
+          }
+        }
       }
       ul {
         li {
@@ -62,9 +75,6 @@
           transition: all 0.3s ease;
           line-height: 1.5;
           transition: all 0.3s ease;
-          &:hover {
-            @include txt-font-semibold;
-          }
         }
       }
     }

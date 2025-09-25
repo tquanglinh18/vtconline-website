@@ -153,13 +153,11 @@
   }
 
   .section-name {
-    font-size: func-getPxFromRem(1.875);
+    font-size: clamp(20px, 4vw, 30px);
     @include txt-font-semibold;
     color: var(--vtco-primary-60);
     margin-bottom: var(--space-base);
-    @include res-responsive(sm) {
-      font-size: func-getPxFromRem(1.25);
-    }
+
 
     &.style-2 {
       text-align: center;
@@ -372,7 +370,7 @@
 }
 
 .vtco-ecosystems {
-  background-image: url("../images/img_decor_dots.png");
+  background-image: url("../images/img_decor_dots_rotate.png");
   background-repeat: no-repeat;
   background-size: auto auto;
   background-position: bottom right;
@@ -671,6 +669,88 @@
           display: none;
         }
       }
+    }
+  }
+}
+
+.lang-select {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  .lang-selected {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #fff;
+    min-width: 100px;
+    img {
+      width: 24px;
+      height: 24px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .arrow-dropdown {
+      position: relative;
+      width: 16px;
+      height: 16px;
+
+      &::after {
+        content: "▶";
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translate(0,-50%) rotate(90deg);
+        font-size: 10px;
+        font-style: normal;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .lang-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 100;
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      &:hover {
+        background: #f2f2f2;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &.show-options {
+    .arrow-dropdown {
+      &::after {
+        transform: rotate(270deg) translate(6px,0);
+      }
+    }
+    .lang-options {
+      display: block;
     }
   }
 }

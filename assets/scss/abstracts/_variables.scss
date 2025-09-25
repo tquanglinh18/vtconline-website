@@ -1,10 +1,14 @@
-// Brand Colors
+// VTCOnline Colors
 $vtco-primary-60: #72ad37;
 $vtco-primary-50: #85c446;
 $vtco-primary-40: #b0d987;
 $vtco-primary-30: #c2e2a2;
 $vtco-primary-10: #eef7e4;
 $vtco-black: #272727;
+
+//VTC Online Color Second
+$vtco-second-60: #c9ee4c;
+$vtco-second-50: #d8f37d;
 
 $vtco-recruitment-bg: #263425;
 
@@ -29,13 +33,17 @@ $space-xl: 24px;
 $space-xxl: 32px;
 
 :root {
-  // Brand
+  // VTC Online Color
   --vtco-primary-60: #{$vtco-primary-60};
   --vtco-primary-50: #{$vtco-primary-50};
   --vtco-primary-40: #{$vtco-primary-40};
   --vtco-primary-30: #{$vtco-primary-30};
   --vtco-primary-10: #{$vtco-primary-10};
   --vtco-black: #{$vtco-black};
+
+  //VTC Online Color Second
+  --vtco-second-60: #{$vtco-second-60};
+    --vtco-second-50: #{$vtco-second-50};
 
   --vtco-recruitment-bg: #{$vtco-recruitment-bg};
 

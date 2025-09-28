@@ -1,12 +1,22 @@
 // _mixins.scss
 @use "./_variables" as *;
 
-
 @mixin linearGradientVtco {
-    background: linear-gradient(180deg, #B1D23E 0%, #76AE45 100%);
+  background: linear-gradient(180deg, #b1d23e 0%, #76ae45 100%);
 }
 
 @mixin linearGradientBlack {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
 
+.box-shadow {
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: var(--white);
+  box-shadow: 0px 15px 35px 0px #676e7614;
+  box-shadow: 0px 5px 15px 0px #0000001f;
 }

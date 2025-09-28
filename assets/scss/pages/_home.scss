@@ -158,7 +158,6 @@
     color: var(--vtco-primary-60);
     margin-bottom: var(--space-base);
 
-
     &.style-2 {
       text-align: center;
       color: var(--vtco-primary-black);
@@ -167,7 +166,9 @@
 
   .section-info {
     color: var(--vtco-primary-black);
-    .section-title {
+  }
+      .section-title {
+      color: var(--vtco-primary-black);
       @include txt-font-semibold;
       font-size: func-getPxFromRem(2.25);
       line-height: 1.25;
@@ -177,10 +178,11 @@
         font-size: func-getPxFromRem(1.875);
       }
       @include res-responsive(md) {
-        font-size: func-getPxFromRem(1.125);
+        font-size: func-getPxFromRem(1.25);
       }
     }
     .section-desc {
+      color: var(--vtco-primary-black);
       @include txt-font-medium;
       font-size: $txt-text-base;
       padding: func-getPxFromRem(2.5) 0;
@@ -204,6 +206,7 @@
     .section-actions {
       width: 100%;
       height: 100%;
+      color: var(--vtco-primary-black);
       @include display-flex-layout(
         row,
         nowrap,
@@ -212,7 +215,6 @@
         var(--space-base)
       );
     }
-  }
 }
 
 .vtco-strategy {
@@ -704,7 +706,7 @@
         position: absolute;
         right: 0.5rem;
         top: 50%;
-        transform: translate(0,-50%) rotate(90deg);
+        transform: translate(0, -50%) rotate(90deg);
         font-size: 10px;
         font-style: normal;
         transition: all 0.3s ease;
@@ -746,7 +748,7 @@
   &.show-options {
     .arrow-dropdown {
       &::after {
-        transform: rotate(270deg) translate(6px,0);
+        transform: rotate(270deg) translate(6px, 0);
       }
     }
     .lang-options {

@@ -1,0 +1,67 @@
+@use "../global" as *;
+
+.vtco-about {
+  background-image: url("../images/img_decor_culture.png");
+  background-position: 0 100%;
+  background-size: 53% auto;
+  background-repeat: no-repeat;
+  @include res-responsive(xxl) {
+    background-position: 0 90%;
+  }
+  @include res-responsive(xl) {
+    background-position: 0 80%;
+  }
+  @include res-responsive(lg) {
+    background-position: 0 100%;
+    background-size: 90% auto;
+  }
+  .vtco-section-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    @include res-responsive(lg) {
+      flex-direction: column-reverse;
+    }
+  }
+  .about-text {
+    width: calc(40% + 1.5rem);
+    @include res-responsive(lg) {
+      width: 100%;
+    }
+  }
+
+  .about-highlights {
+    width: 50%;
+    position: relative;
+    background-image: url("../images/img_decor_dots.png");
+    background-repeat: no-repeat;
+    background-size: 15% auto;
+    background-position: top left;
+    @include res-responsive(lg) {
+      width: 100%;
+      margin: 4% auto 0;
+    }
+    img {
+      width: 100%;
+      border-radius: 25% 0 25% 25%;
+      aspect-ratio: 588/855;
+      object-fit: cover;
+    }
+  }
+}
+
+.about-item {
+  h3 {
+    font-size: clamp(24px, 4vw, 48px);
+  }
+  p {
+    width: fit-content;
+    font-size: clamp(12px, 2vw, 20px);
+    border-bottom: 3px solid;
+    border-image: linear-gradient(
+      90deg,
+      #c2e2a2 0.84%,
+      rgba(194, 226, 162, 0) 100%
+    ) 1 ;
+    color: var(--vtco-primary-80);
+  }
+}

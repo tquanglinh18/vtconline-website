@@ -1,4 +1,5 @@
 // VTCOnline Colors
+$vtco-primary-80: #558229;
 $vtco-primary-60: #72ad37;
 $vtco-primary-50: #85c446;
 $vtco-primary-40: #b0d987;
@@ -34,6 +35,7 @@ $space-xxl: 32px;
 
 :root {
   // VTC Online Color
+  --vtco-primary-80: #{$vtco-primary-80};
   --vtco-primary-60: #{$vtco-primary-60};
   --vtco-primary-50: #{$vtco-primary-50};
   --vtco-primary-40: #{$vtco-primary-40};
@@ -43,7 +45,7 @@ $space-xxl: 32px;
 
   //VTC Online Color Second
   --vtco-second-60: #{$vtco-second-60};
-    --vtco-second-50: #{$vtco-second-50};
+  --vtco-second-50: #{$vtco-second-50};
 
   --vtco-recruitment-bg: #{$vtco-recruitment-bg};
 

@@ -39,3 +39,7 @@ $text-xxl: 28px;
 .txt-second-60 {
   color: var(--vtco-second-60);
 }
+
+b {
+  @include font-bold;
+}

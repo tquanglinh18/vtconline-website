@@ -1,6 +1,10 @@
 @use "../global" as *;
 
 .btn-normal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   padding: var(--space-md) var(--space-lg);
   background: var(--vtco-primary-50);
   border-radius: var(--space-sm);

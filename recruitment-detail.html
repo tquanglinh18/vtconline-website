@@ -9,6 +9,82 @@
     <link rel="stylesheet" href="./assets/libs/aos/aos.css">
     <link rel="stylesheet" href="./assets/css/styles-site.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <style>
+        .lang-select {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            font-family: Arial, sans-serif;
+        }
+
+        .lang-selected {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #fff;
+            min-width: 100px;
+        }
+
+        .lang-selected img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .lang-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            z-index: 100;
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .lang-option:hover {
+            background: #f2f2f2;
+        }
+
+        .lang-option img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .arrow {
+            margin-left: auto;
+            border: solid #333;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 4px;
+            transform: rotate(45deg);
+            transition: transform 0.2s;
+        }
+
+        .open .arrow {
+            transform: rotate(-135deg);
+        }
+
+        .open .lang-options {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,13 +107,23 @@
                 </div>
 
                 <div class="vtco-actions">
-                    <div class="vtco-lang">
-                        <select>
-                            <option value="vi">VN</option>
-                            <option value="en">EN</option>
-                            <option value="ko">KO</option>
-                        </select>
-
+                    <div class="lang-select" id="langSelect">
+                        <div class="lang-selected">
+                            <img src="https://flagcdn.com/w20/vn.png" alt="VN">
+                            <span>VN</span>
+                            <i class="arrow"></i>
+                        </div>
+                        <div class="lang-options">
+                            <div class="lang-option" data-lang="VN">
+                                <img src="https://flagcdn.com/w20/vn.png" alt="VN"> VN
+                            </div>
+                            <div class="lang-option" data-lang="EN">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="EN"> EN
+                            </div>
+                            <div class="lang-option" data-lang="JP">
+                                <img src="https://flagcdn.com/w20/jp.png" alt="JP"> JP
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -512,6 +598,31 @@
     <script src="./assets/libs/swiper-11.2.10/swiper-bundle.min.js "></script>
     <script src="./assets/libs/aos/aos.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script>
+        const langSelect = document.getElementById("langSelect");
+        const selected = langSelect.querySelector(".lang-selected");
+        const options = langSelect.querySelectorAll(".lang-option");
+
+        selected.addEventListener("click", () => {
+            langSelect.classList.toggle("open");
+        });
+
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                const img = option.querySelector("img").src;
+                const text = option.dataset.lang;
+                selected.querySelector("img").src = img;
+                selected.querySelector("span").textContent = text;
+                langSelect.classList.remove("open");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!langSelect.contains(e.target)) {
+                langSelect.classList.remove("open");
+            }
+        });
+    </script>
 
 </body>
 

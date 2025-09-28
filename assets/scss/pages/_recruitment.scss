@@ -307,11 +307,15 @@
   }
   .contact-section {
     width: 25%;
+    position: sticky;
+    top: 10vh;
     @include res-responsive(xxl) {
       width: 30%;
     }
     @include res-responsive(lg) {
       width: 100%;
+      position: relative;
+      top: unset;
     }
   }
 }

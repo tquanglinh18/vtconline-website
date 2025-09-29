@@ -17,7 +17,14 @@
 
   .vtco-section-wrapper {
     padding: 0 1rem;
+  }
+
+  .vtco-section-body {
     justify-content: space-around;
+    align-items: stretch;
+    @include res-responsive(lg) {
+      flex-direction: column;
+    }
   }
   .section-text {
     width: 45%;
@@ -207,8 +214,13 @@
     }
     img {
       width: 50%;
+      min-width: 992px;
+      @include res-responsive(xxl) {
+        width: 75%;
+      }
       @include res-responsive(lg) {
         width: 75%;
+        min-width: unset;
       }
       @include res-responsive(md) {
         width: 90%;
@@ -342,10 +354,15 @@
   max-width: 992px;
   margin-right: auto;
   margin-left: auto;
-  .section-title {
+
+  .vtco-section-header {
     margin-bottom: 1rem;
-    text-align: center;
     @include txt-font-medium;
+    justify-content: center;
+  }
+
+  .vtco-section-body {
+    flex-direction: column;
   }
   .lst-partners {
     width: 100%;

@@ -88,6 +88,7 @@
   }
 
   &-header {
+    width: 100%;
     margin: var(--space-base) 0;
     @include display-flex-layout(
       row,
@@ -103,6 +104,16 @@
 
   &-body {
     width: 100%;
+    @include display-flex-layout(
+      row,
+      nowrap,
+      center,
+      center,
+      var(--space-base)
+    );
+    @include res-responsive(md) {
+      flex-direction: column;
+    }
   }
 
   &-footer {
@@ -167,54 +178,46 @@
   .section-info {
     color: var(--vtco-primary-black);
   }
-      .section-title {
-      color: var(--vtco-primary-black);
-      @include txt-font-semibold;
-      font-size: func-getPxFromRem(2.25);
-      line-height: 1.25;
-      letter-spacing: 1px;
+  .section-title {
+    color: var(--vtco-primary-black);
+    @include txt-font-semibold;
+    font-size: func-getPxFromRem(2.25);
+    line-height: 1.25;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    @include res-responsive(lg) {
+      font-size: func-getPxFromRem(1.875);
+    }
+    @include res-responsive(md) {
+      font-size: func-getPxFromRem(1.25);
+    }
+  }
+  .section-desc {
+    color: var(--vtco-primary-black);
+    @include txt-font-medium;
+    font-size: $txt-text-base;
+    padding: func-getPxFromRem(2.5) 0;
+    @include res-responsive(lg) {
+      padding: func-getPxFromRem(1.5) 0;
+    }
+    @include res-responsive(md) {
+      padding: func-getPxFromRem(1) 0;
+      font-size: func-getPxFromRem(0.875);
+    }
+    p {
+      margin-bottom: var(--space-md);
+      line-height: 1.5;
       word-spacing: 1px;
-      @include res-responsive(lg) {
-        font-size: func-getPxFromRem(1.875);
-      }
-      @include res-responsive(md) {
-        font-size: func-getPxFromRem(1.25);
-      }
-    }
-    .section-desc {
-      color: var(--vtco-primary-black);
-      @include txt-font-medium;
-      font-size: $txt-text-base;
-      padding: func-getPxFromRem(2.5) 0;
-      @include res-responsive(lg) {
-        padding: func-getPxFromRem(1.5) 0;
-      }
-      @include res-responsive(md) {
-        padding: func-getPxFromRem(1) 0;
-        font-size: func-getPxFromRem(0.875);
-      }
-      p {
-        margin-bottom: var(--space-md);
-        line-height: 1.5;
-        word-spacing: 1px;
 
-        &:last-child {
-          margin-bottom: 0;
-        }
+      &:last-child {
+        margin-bottom: 0;
       }
     }
-    .section-actions {
-      width: 100%;
-      height: 100%;
-      color: var(--vtco-primary-black);
-      @include display-flex-layout(
-        row,
-        nowrap,
-        start,
-        center,
-        var(--space-base)
-      );
-    }
+  }
+  .section-actions {
+    color: var(--vtco-primary-black);
+    @include display-flex-layout(row, nowrap, start, center, var(--space-base));
+  }
 }
 
 .vtco-strategy {
@@ -236,6 +239,17 @@
       padding: 10% 1rem;
     }
   }
+
+  .vtco-section-body {
+    justify-content: space-between;
+    @include res-responsive(xxl) {
+      justify-content: space-around;
+    }
+    @include res-responsive(lg) {
+      flex-direction: column;
+    }
+  }
+
   .strategy-text {
     width: 45%;
     @include res-responsive(lg) {
@@ -378,10 +392,12 @@
   background-position: bottom right;
   margin-bottom: 0;
   .vtco-section-wrapper {
-    @include display-flex-column;
-    @include display-justify-start;
     gap: 0;
     padding-bottom: 6%;
+  }
+  .vtco-section-header {
+    flex-direction: column;
+    align-items: start;
   }
   .section-info {
     .section-desc {
@@ -477,18 +493,17 @@
     background-position: 0 100%;
     background-size: 90% auto;
   }
-  .vtco-section-wrapper {
-    @include display-flex-layout(
-      row,
-      nowrap,
-      space-between,
-      center,
-      var(--space-base)
-    );
+
+  .vtco-section-body {
+    justify-content: space-between;
+    @include res-responsive(xxl) {
+      justify-content: space-around;
+    }
     @include res-responsive(lg) {
       flex-direction: column-reverse;
     }
   }
+
   .culture-text {
     width: calc(40% + 1.5rem);
     @include res-responsive(lg) {
@@ -588,6 +603,11 @@
   background: var(--vtco-recruitment-bg);
   margin-bottom: 0;
 
+  .vtco-section-body {
+    @include res-responsive(lg) {
+      flex-direction: column;
+    }
+  }
   .vtco-section-col {
     &:first-child {
       width: 40%;
@@ -619,13 +639,12 @@
     }
   }
 
+  .section-info {
+    color: var(--white);
+  }
+
   .vtco-section-wrapper {
     padding: 0;
-    @include display-justify-between;
-    @include display-align-center;
-    .section-info {
-      color: var(--white);
-    }
   }
 
   .lst-img-recruitment {

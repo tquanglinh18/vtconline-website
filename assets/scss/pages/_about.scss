@@ -1,50 +1,146 @@
 @use "../global" as *;
 
 .vtco-about {
-  background-image: url("../images/img_decor_culture.png");
-  background-position: 0 100%;
-  background-size: 53% auto;
-  background-repeat: no-repeat;
-  @include res-responsive(xxl) {
-    background-position: 0 90%;
-  }
+  padding: 2% 0;
+  background-image: url("../images/img_decor_culture.png"),
+    url("../images/img_decor_about.png");
+  background-position: 0 95%, top right;
+  background-size: 57% auto, 60% auto;
+  background-repeat: no-repeat, no-repeat;
   @include res-responsive(xl) {
-    background-position: 0 80%;
+    background-position: 0 65%, top right;
   }
   @include res-responsive(lg) {
-    background-position: 0 100%;
-    background-size: 90% auto;
+    background-position: 0 45%, top right;
   }
+
   .vtco-section-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
-    @include res-responsive(lg) {
-      flex-direction: column-reverse;
-    }
-  }
-  .about-text {
-    width: calc(40% + 1.5rem);
-    @include res-responsive(lg) {
-      width: 100%;
+    @include res-responsive(md) {
+      padding: var(--space-base) 0;
     }
   }
 
+  .vtco-section-header {
+    @include res-responsive(md) {
+      padding: 0 var(--space-base);
+      margin: 0;
+    }
+  }
   .about-highlights {
-    width: 50%;
+    width: 100%;
     position: relative;
     background-image: url("../images/img_decor_dots.png");
     background-repeat: no-repeat;
-    background-size: 15% auto;
+    background-size: 20% auto;
     background-position: top left;
-    @include res-responsive(lg) {
-      width: 100%;
-      margin: 4% auto 0;
+    grid-row: 1 / 3;
+    @include res-responsive(xl) {
+      grid-row: 1;
     }
-    img {
+    .office-img {
       width: 100%;
-      border-radius: 25% 0 25% 25%;
-      aspect-ratio: 588/855;
-      object-fit: cover;
+      height: 100%;
+      display: flex;
+      justify-content: end;
+      img {
+        width: 90% !important;
+        border-radius: 15% 0 15% 15%;
+        aspect-ratio: 588/855;
+        object-fit: cover;
+        padding-bottom: 2rem;
+        max-height: 855px;
+        @include res-responsive(md) {
+          width: 100% !important;
+          border-radius: 0 !important;
+        }
+      }
+    }
+
+    .be-u {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      img {
+        width: 50%;
+        max-width: 320px;
+        aspect-ratio: unset;
+        padding: 0;
+      }
+
+      @include res-responsive(md) {
+        display: none;
+      }
+    }
+
+    @include res-responsive(md) {
+      grid-row: 1;
+    }
+  }
+
+  .vtco-section-body {
+    width: 100%;
+    position: relative;
+    @include display-grid-cols(2, var(--space-base));
+    justify-items: start;
+    align-content: start;
+    align-self: start;
+    justify-self: start;
+    @include res-responsive(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .section-info {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    .info-wrap {
+      padding-left: 12%;
+      @include res-responsive(md) {
+        width: 90%;
+        left: 50%;
+        bottom: 0;
+        padding-left: 0;
+        transform: translateX(-50%);
+        position: absolute;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0px 15px 35px 0px #676e7614;
+        box-shadow: 0px 5px 15px 0px #0000001f;
+        background: #ffffffeb;
+      }
+      .logo-vtco {
+        width: 100%;
+        img {
+          width: 100%;
+          max-width: 60%;
+        }
+      }
+    }
+  }
+
+  .section-desc {
+    width: 100%;
+    height: 100%;
+    padding: 0 0 0 12%;
+    max-width: 75vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    @include res-responsive(xl) {
+      grid-column: 1/3;
+      padding: 4% 0;
+    }
+    @include res-responsive(md) {
+      grid-column: 1;
+      padding: var(--space-base);
+      max-width: unset;
     }
   }
 }
@@ -55,13 +151,27 @@
   }
   p {
     width: fit-content;
-    font-size: clamp(12px, 2vw, 20px);
+    font-size: clamp(12px, 1.5vw, 20px);
     border-bottom: 3px solid;
     border-image: linear-gradient(
-      90deg,
-      #c2e2a2 0.84%,
-      rgba(194, 226, 162, 0) 100%
-    ) 1 ;
+        90deg,
+        #c2e2a2 0.84%,
+        rgba(194, 226, 162, 0) 100%
+      )
+      1;
     color: var(--vtco-primary-80);
+  }
+}
+
+.lst-about {
+  width: 100%;
+  @include display-grid-cols(2, var(--space-base));
+  grid-template-columns: 1fr 1.75fr;
+  @include res-responsive(xl) {
+    grid-template-columns: 1fr;
+  }
+
+  @include res-responsive(md) {
+    grid-template-columns: 1fr 1fr;
   }
 }

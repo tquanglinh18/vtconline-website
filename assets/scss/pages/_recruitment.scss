@@ -115,6 +115,9 @@
   @include res-responsive(sm) {
     padding: 8% 0;
   }
+  .vtco-section-header {
+    justify-content: center;
+  }
   .lst-why-card {
     width: 100%;
     @include display-grid-cols(4, var(--space-base));

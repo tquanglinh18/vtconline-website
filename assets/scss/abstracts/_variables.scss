@@ -1,4 +1,6 @@
 // VTCOnline Colors
+
+$vtco-primary-90: #4c7324;
 $vtco-primary-80: #558229;
 $vtco-primary-60: #72ad37;
 $vtco-primary-50: #85c446;
@@ -35,6 +37,7 @@ $space-xxl: 32px;
 
 :root {
   // VTC Online Color
+  --vtco-primary-90: #{$vtco-primary-90};
   --vtco-primary-80: #{$vtco-primary-80};
   --vtco-primary-60: #{$vtco-primary-60};
   --vtco-primary-50: #{$vtco-primary-50};

@@ -70,6 +70,7 @@
     justify-content: space-between;
     @include res-responsive(lg) {
       flex-direction: column;
+      gap: 0.25rem;
     }
     .news-content {
       width: 40%;
@@ -123,13 +124,7 @@
   margin-bottom: 4%;
 
   .vtco-section-body {
-    @include display-flex-layout(
-      row,
-      nowrap,
-      space-between,
-      start,
-      var(--space-sm)
-    );
+    justify-content: space-between;
   }
 
   .vtco-section-footer {
@@ -311,4 +306,3 @@
     }
   }
 }
-

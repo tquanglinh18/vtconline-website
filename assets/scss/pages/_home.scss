@@ -111,7 +111,7 @@
       center,
       var(--space-base)
     );
-    @include res-responsive(md) {
+    @include res-responsive(lg) {
       flex-direction: column;
     }
   }
@@ -773,5 +773,15 @@
     .lang-options {
       display: block;
     }
+  }
+}
+
+.box-container {
+  width: 100%;
+  max-width: $res-breakpoint-xxl;
+  margin: 0 auto;
+  padding: var(--space-base);
+  @include res-responsive(lg) {
+    max-width: 600px;
   }
 }

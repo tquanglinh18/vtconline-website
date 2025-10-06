@@ -7,7 +7,7 @@
   justify-content: end;
   align-items: end;
   overflow: hidden;
-
+  margin: 1% 0;
   @include res-responsive(lg) {
     justify-content: start;
     align-items: end;
@@ -24,7 +24,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-    
+
     @include res-responsive(lg) {
       position: relative;
       max-width: 600px;
@@ -33,7 +33,7 @@
       align-items: start;
     }
     .section-col {
-      width: 50%;
+      width: 45%;
       &.cols-label {
         @include res-responsive(lg) {
           width: 100%;
@@ -62,7 +62,7 @@
           align-items: center;
           margin: 1rem auto 0;
         }
-        
+
         @include res-responsive(sm) {
           flex-direction: column;
           margin: 0;
@@ -116,6 +116,11 @@
     align-items: end;
     @include res-responsive(xxl) {
       width: 50%;
+      margin-top: 6%;
+    }
+
+    @include res-responsive(xl) {
+      margin-top: 10%;
     }
 
     @include res-responsive(lg) {

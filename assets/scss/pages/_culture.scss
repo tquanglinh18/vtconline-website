@@ -110,7 +110,7 @@
 
   .img-be-u {
     width: 55%;
-    margin-top: 3%;
+    margin-top: 2%;
     display: flex;
     justify-content: start;
     align-items: end;
@@ -249,5 +249,192 @@
         background-repeat: no-repeat;
       }
     }
+  }
+}
+
+.section-decor {
+  position: relative;
+  width: 62vw;
+  max-width: 1167px;
+  margin-top: 5%;
+  padding-top: 5%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  overflow: hidden;
+  @include res-responsive(xxl) {
+    width: 100%;
+    margin-top: 0%;
+    padding-left: 1rem;
+  }
+}
+.vtco-strategic {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  margin-bottom: 0;
+  .section-information {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 0 auto;
+    transform: translateX(-50%);
+    z-index: 10;
+    @include res-responsive(xxl) {
+      padding: 2rem 1rem 0;
+      position: relative;
+      inset: 0;
+      transform: translate(0);
+    }
+
+    .section-name,
+    .section-info {
+      width: 50%;
+      max-width: 588px;
+      @include res-responsive(xxl) {
+        width: 100%;
+        max-width: 820px;
+        text-align: center;
+        margin: 0 auto;
+      }
+      @include res-responsive(lg) {
+        width: 100%;
+        max-width: 600px;
+        text-align: start;
+      }
+    }
+  }
+
+  .section-decor {
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+    }
+    .bg-1 {
+      position: relative;
+      width: 100%;
+      opacity: 1;
+    }
+
+    .bg-2 {
+      right: 75%;
+      bottom: 10%;
+      width: calc(184 / 1167 * 100%);
+      max-width: 184px;
+      animation: zoomIn 0.5s ease-in forwards;
+    }
+
+    .bg-3 {
+      bottom: 65%;
+      right: 33%;
+      width: calc(143 / 1167 * 100%);
+      max-width: 143px;
+      animation: bounceUp 0.5s 0.2s ease-in forwards;
+    }
+
+    .cloud-1 {
+      z-index: 1;
+      bottom: 16%;
+      width: calc(454 / 1167 * 100%);
+      max-width: 454px;
+      animation: bounceUp 0.3s 0.5s ease-in forwards;
+    }
+
+    .cloud-2 {
+      z-index: 2;
+      right: 10%;
+      width: calc(648 / 1167 * 100%);
+      max-width: 648px;
+      animation: bounceUp 0.3s 0.6s ease-in forwards;
+    }
+
+    .cloud-3 {
+      z-index: 3;
+      width: calc(475 / 1167 * 100%);
+      max-width: 475px;
+      animation: bounceUp 0.3s 0.4s ease-in forwards;
+    }
+
+    .cloud-4 {
+      z-index: 4;
+      right: 35%;
+      width: calc(187 / 1167 * 100%);
+      max-width: 187px;
+      animation: bounceUp 0.3s 0.3s ease-in forwards;
+    }
+
+    .cloud-5 {
+      z-index: 5;
+      width: calc(189 / 1167 * 100%);
+      max-width: 189px;
+      animation: bounceUp 0.3s 0.2s ease-in forwards;
+    }
+
+    .cloud-6 {
+      z-index: 6;
+      width: calc(401 / 1167 * 100%);
+      max-width: 401px;
+      animation: bounceUp 0.3s 0.1s ease-in forwards;
+    }
+
+    .cloud-7 {
+      z-index: 7;
+      width: calc(248 / 1167 * 100%);
+      max-width: 248px;
+      animation: bounceUp 0.3s ease-in forwards;
+    }
+
+    .rocket-be-u {
+      z-index: 8;
+      bottom: 9%;
+      right: 18%;
+      width: calc(621 / 1167 * 100%);
+      max-width: 621px;
+      animation: scaleIn 0.75s ease-in forwards;
+    }
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    bottom: -10%;
+    right: 0%;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceUp {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }

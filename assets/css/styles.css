@@ -729,12 +729,10 @@ b {
 .vtco-culture .section-desc ul li {
   padding-left: var(--space-xxl);
   margin-bottom: var(--space-sm);
+  position: relative;
 }
 .vtco-culture .section-desc ul li:last-child {
   margin-bottom: 0;
-}
-.vtco-culture .section-desc ul li {
-  position: relative;
 }
 .vtco-culture .section-desc ul li::before {
   content: "";
@@ -866,6 +864,7 @@ b {
 }
 .vtco-recruitment .lst-img-recruitment .recruitment-col {
   flex: 0 0 25%;
+  transform: translateY(-21%);
 }
 .vtco-recruitment .lst-img-recruitment .recruitment-col img {
   display: block;
@@ -875,9 +874,6 @@ b {
   object-fit: cover;
   border-radius: 240px;
   margin-bottom: 8%;
-}
-.vtco-recruitment .lst-img-recruitment .recruitment-col {
-  transform: translateY(-21%);
 }
 .vtco-recruitment .lst-img-recruitment .recruitment-col:nth-child(2n) {
   transform: translateY(-35%);
@@ -2014,14 +2010,12 @@ b {
   justify-content: center;
   align-items: center;
   gap: var(--space-base);
+  aspect-ratio: 1920/370;
 }
 .recruitment-banner .section-name {
   font-size: clamp(24px, 8vw, 60px);
   font-family: "Exo-SemiBold";
   color: var(--white);
-}
-.recruitment-banner {
-  aspect-ratio: 1920/370;
 }
 @media (max-width: 992px) {
   .recruitment-banner {
@@ -2400,7 +2394,7 @@ b {
 }
 .vtco-core-values .img-be-u {
   width: 55%;
-  margin-top: 3%;
+  margin-top: 2%;
   display: flex;
   justify-content: start;
   align-items: end;
@@ -2536,6 +2530,187 @@ b {
   background-repeat: no-repeat;
 }
 
+.section-decor {
+  position: relative;
+  width: 62vw;
+  max-width: 1167px;
+  margin-top: 5%;
+  padding-top: 5%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  overflow: hidden;
+}
+@media (max-width: 1440px) {
+  .section-decor {
+    width: 100%;
+    margin-top: 0%;
+    padding-left: 1rem;
+  }
+}
+
+.vtco-strategic {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  margin-bottom: 0;
+}
+.vtco-strategic .section-information {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+@media (max-width: 1440px) {
+  .vtco-strategic .section-information {
+    padding: 2rem 1rem 0;
+    position: relative;
+    inset: 0;
+    transform: translate(0);
+  }
+}
+.vtco-strategic .section-information .section-name,
+.vtco-strategic .section-information .section-info {
+  width: 50%;
+  max-width: 588px;
+}
+@media (max-width: 1440px) {
+  .vtco-strategic .section-information .section-name,
+  .vtco-strategic .section-information .section-info {
+    width: 100%;
+    max-width: 820px;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 992px) {
+  .vtco-strategic .section-information .section-name,
+  .vtco-strategic .section-information .section-info {
+    width: 100%;
+    max-width: 600px;
+    text-align: start;
+  }
+}
+.vtco-strategic .section-decor img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.vtco-strategic .section-decor .bg-1 {
+  position: relative;
+  width: 100%;
+  opacity: 1;
+}
+.vtco-strategic .section-decor .bg-2 {
+  right: 75%;
+  bottom: 10%;
+  width: 15.7669237361%;
+  max-width: 184px;
+  animation: zoomIn 0.5s ease-in forwards;
+}
+.vtco-strategic .section-decor .bg-3 {
+  bottom: 65%;
+  right: 33%;
+  width: 12.2536418166%;
+  max-width: 143px;
+  animation: bounceUp 0.5s 0.2s ease-in forwards;
+}
+.vtco-strategic .section-decor .cloud-1 {
+  z-index: 1;
+  bottom: 16%;
+  width: 38.9031705227%;
+  max-width: 454px;
+  animation: bounceUp 0.3s 0.5s ease-in forwards;
+}
+.vtco-strategic .section-decor .cloud-2 {
+  z-index: 2;
+  right: 10%;
+  width: 55.5269922879%;
+  max-width: 648px;
+  animation: bounceUp 0.3s 0.6s ease-in forwards;
+}
+.vtco-strategic .section-decor .cloud-3 {
+  z-index: 3;
+  width: 40.7026563839%;
+  max-width: 475px;
+  animation: bounceUp 0.3s 0.4s ease-in forwards;
+}
+.vtco-strategic .section-decor .cloud-4 {
+  z-index: 4;
+  right: 35%;
+  width: 16.0239931448%;
+  max-width: 187px;
+  animation: bounceUp 0.3s 0.3s ease-in forwards;
+}
+.vtco-strategic .section-decor .cloud-5 {
+  z-index: 5;
+  width: 16.1953727506%;
+  max-width: 189px;
+  animation: bounceUp 0.3s 0.2s ease-in forwards;
+}
+.vtco-strategic .section-decor .cloud-6 {
+  z-index: 6;
+  width: 34.3616109683%;
+  max-width: 401px;
+  animation: bounceUp 0.3s 0.1s ease-in forwards;
+}
+.vtco-strategic .section-decor .cloud-7 {
+  z-index: 7;
+  width: 21.2510711225%;
+  max-width: 248px;
+  animation: bounceUp 0.3s ease-in forwards;
+}
+.vtco-strategic .section-decor .rocket-be-u {
+  z-index: 8;
+  bottom: 9%;
+  right: 18%;
+  width: 53.2133676093%;
+  max-width: 621px;
+  animation: scaleIn 0.75s ease-in forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    bottom: -10%;
+    right: 0%;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bounceUp {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .vtco-footer {
   width: 100%;
   background-color: var(--white);

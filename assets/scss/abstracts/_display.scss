@@ -173,3 +173,14 @@
 .flex-row {
   @include flex-layout(row, nowrap, start, center, var(--space-md));
 }
+
+.flex-column {
+  @include flex-layout(column, nowrap, start, center, var(--space-md));
+}
+
+.flex-column-important {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: start;
+  align-items: center;
+}

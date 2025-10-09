@@ -104,6 +104,49 @@ const swiper = new Swiper('.vtco-swiper', {
   },
 });
 
+const ioeSwiper = new Swiper('#ioe-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    },
+    1200: {
+      slidesPerView: 4
+    }
+  }
+});
+
+
+const betiaSwiper = new Swiper('#betia-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    },
+    1200: {
+      slidesPerView: 4
+    }
+  }
+});
+
+
+
 class InfiniteScroller {
   constructor(containerId, speed = 1) {
     this.container = document.getElementById(containerId);

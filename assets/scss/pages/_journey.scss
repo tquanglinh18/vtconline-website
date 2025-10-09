@@ -313,9 +313,9 @@
   }
 }
 
-.culture-layout {
+.journey-layout {
   width: 100%;
-  background-image: url(../images/bg_culture_page.png);
+  background-image: url(../images/bg_journey_page.png);
   background-position: top left;
   background-size: auto 128%;
   background-repeat: no-repeat;
@@ -323,7 +323,7 @@
   @include res-responsive(lg) {
     background-size: contain;
   }
-  .culture-content {
+  .journey-content {
     width: 100%;
     max-width: 1200px;
     padding: 2rem 0;
@@ -358,7 +358,7 @@
     }
   }
 
-  .culture-decor {
+  .journey-decor {
     position: relative;
     width: 100%;
     padding-top: 10%;
@@ -379,7 +379,7 @@
   align-items: end;
   margin-bottom: 0;
 
-  .culture-decor {
+  .journey-decor {
     .strategic-decor {
       position: relative;
       display: flex;
@@ -763,7 +763,7 @@
 }
 
 .vtco-misson {
-  .culture-decor {
+  .journey-decor {
     @include res-responsive(xxl) {
       padding-top: 0;
     }

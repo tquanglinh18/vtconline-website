@@ -26,12 +26,14 @@
     @include display-flex-layout(row, nowrap, center, center, 0);
     transform: translateX(-25%);
     opacity: 0;
+    padding: 0;
   }
   span {
     transition: all 0.3s ease;
   }
 
   &:hover {
+    color: white;
     &::after {
       transform: translateX(0);
       opacity: 1;
@@ -45,5 +47,8 @@
     background-color: var(--grey-50);
     color: var(--vtco-primary-black);
     border: 1px solid #676e7614;
+    &:hover {
+    color: var(--vtco-primary-black);
+  }
   }
 }

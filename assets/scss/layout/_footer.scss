@@ -77,6 +77,14 @@
           transition: all 0.3s ease;
           line-height: 1.5;
           transition: all 0.3s ease;
+
+          &:hover {
+            color: var(--vtco-primary-50);
+            a {
+            color: var(--vtco-primary-50);
+
+            }
+          }
         }
       }
     }

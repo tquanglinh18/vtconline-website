@@ -43,6 +43,7 @@ header {
     ul {
       height: 100%;
       @include display-flex-layout(row, nowrap, center, center, 4%);
+      margin-bottom: 0;
     }
 
     @include res-responsive(lg) {
@@ -56,11 +57,13 @@ header {
       &:hover,
       &:first-child {
         color: var(--vtco-primary-50);
-      }
+        a {
+          color: var(--vtco-primary-50);
+        }
+      } 
       &:first-child {
         font-family: "Exo-SemiBold";
       }
     }
   }
-
 }

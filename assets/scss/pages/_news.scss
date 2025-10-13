@@ -4,7 +4,7 @@
   margin: 0 0 4% 0;
   background-color: var(--vtco-primary-10);
   .section-name {
-    color: var(--vtco-primary-black);
+    color: var(--vtco-black);
     margin: var(--space-base) 0;
     @include res-responsive(lg) {
       margin-bottom: 0;
@@ -16,7 +16,9 @@
   width: 100%;
   @include display-flex-layout(row, nowrap, start, center, var(--space-xl));
   cursor: pointer;
+  transition: all 0.3s ease;
   &:hover {
+    transform: translateY(-4px);
     .news-title {
       color: var(--vtco-primary-60) !important;
     }
@@ -33,11 +35,11 @@
     }
 
     .news-title {
-      color: var(--vtco-primary-black);
+      color: var(--vtco-black);
       font-size: $txt-text-lg;
       @include txt-font-semibold;
       @include txt-max-line(2);
-      line-height: 1.5;
+      line-height: 1.25;
       margin-bottom: 0.25rem;
       transition: all 0.3s ease;
       @include res-responsive(md) {
@@ -53,6 +55,7 @@
       font-size: $txt-text-base;
       @include txt-font-regular;
       @include txt-max-line(1);
+      line-height: 1.5;
     }
   }
   .news-thumb {
@@ -84,11 +87,9 @@
       }
 
       .news-title {
-        color: var(--vtco-primary-black);
         font-size: 2rem;
         @include txt-max-line(3);
         margin-bottom: var(--space-base);
-        line-height: 1.25;
         @include res-responsive(lg) {
           font-size: 30px;
         }
@@ -98,8 +99,6 @@
       }
 
       .news-desc {
-        color: var(--grey-700);
-        font-size: $txt-text-base;
         @include txt-font-regular;
         @include txt-max-line(4);
         @include res-responsive(md) {
@@ -222,7 +221,7 @@
   width: 100%;
   @include display-flex-layout(row, nowrap, start, center, var(--space-sm));
   a {
-    color: var(--vtco-primary-black);
+    color: var(--vtco-black);
   }
 }
 

@@ -1,0 +1,37 @@
+@use "../global" as *;
+
+.culture-banner {
+  .page-name {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 992px;
+    margin: 0 auto;
+  }
+
+  .page-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 992px;
+    margin: 0 auto;
+
+    .culture-nav {
+      width: 100%;
+      max-width: 223px;
+      border-radius: var(--space-base);
+      background: #f8d4b0;
+      border-bottom: 8px solid #ea582c;
+      color: #ea582c;
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 30px;
+      @include txt-font-semibold;
+      span {
+        @include txt-font-bold;
+      }
+    }
+  }
+}

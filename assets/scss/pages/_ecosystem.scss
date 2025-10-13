@@ -3,6 +3,20 @@
 .ecosystems-page-layout {
   width: 100%;
   position: relative;
+  background-image: url("../images/img-ecosystem/bg_entertaiment_page_1.png"),
+    url("../images/img-ecosystem/bg_entertaiment_page_2.png");
+  background-position: 120% 70%, 10% calc(100% + 450px);
+  background-size: 45% auto, 50% auto;
+  background-repeat: no-repeat;
+  @include res-responsive(lg) {
+    background-position: 150% 75%, 10% calc(100% + 320px);
+    background-size: 75% auto, 75% auto;
+  }
+  @include res-responsive(md) {
+    background-position: 150% 75%, 10% calc(100% + 64px);
+    background-size: 75% auto, 75% auto;
+  }
+
   &::after {
     content: "";
     width: 100%;
@@ -48,10 +62,10 @@
     @include res-responsive(lg) {
       padding: 4% 0;
       max-width: 75vw;
+      min-height: unset;
     }
     @include res-responsive(sm) {
       padding: 6% 0;
-      min-height: none;
     }
     .page-name {
       @include txt-font-bold;
@@ -77,114 +91,112 @@
 .service-container {
   width: 100%;
   max-width: 67vw;
-  margin: 2% auto 4%;
+  margin: 4% auto;
   position: relative;
-  padding: 2% 0.5rem 1rem;
+  padding: 2% 0.5rem 2%;
+  display: grid;
+  grid-template-areas: "ord thumb" "intro thumb" "more more";
+  grid-template-columns: 1fr 1.1fr;
+  column-gap: 8%;
+
+  @include res-responsive(xxl) {
+    max-width: 80vw;
+  }
+
   @include res-responsive(lg) {
     max-width: 600px;
     padding: 4% 1rem;
+    grid-template-areas: "ord" "thumb" "intro" "more";
+    grid-template-columns: 1fr;
   }
-&:first-child {
-margin-top: 0;
-}
-  &:nth-child(2n) {
-    .service-overview {
-      flex-direction: row-reverse;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+        @include res-responsive(xxl) {
+      padding-bottom: 6% !important;
     }
-
-    .service-ord {
-      left: unset;
-      right: 0;
-      transform: translate(100%, 0);
+    @include res-responsive(lg) {
+      padding-bottom: 12% !important;
+    }
+  }
+  &:nth-child(even) {
+    grid-template-areas: "thumb ord" "thumb intro" "more more";
+    grid-template-columns: 1.1fr 1fr;
+    @include res-responsive(lg) {
+      max-width: 600px;
+      padding: 4% 1rem;
+      grid-template-areas: "ord" "thumb" "intro" "more";
+      grid-template-columns: 1fr;
     }
   }
 
   .service-ord {
+    grid-area: ord;
     @include txt-font-Jersey10;
     font-size: clamp(160px, 15vw, 260px);
-    text-align: center;
     color: var(--error-600);
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
     line-height: 1;
     @include res-responsive(lg) {
-      margin: 2rem 0 1rem;
-      position: relative;
-      transform: translate(0) !important;
-      font-size: 200px;
-      line-height: 0.75;
-    }
-
-    @include res-responsive(sm) {
-      position: relative;
-      transform: translate(0);
-      font-size: 100px;
+      text-align: center;
+      margin-bottom: 1rem;
     }
   }
-  .service-overview {
-    display: flex;
-    justify-content: space-between;
+  .service-intro {
+    grid-area: intro;
+    height: 100%;
+    h3 {
+      @include txt-font-semibold;
+      font-size: clamp(20px, 4vw, 32px);
+      margin-bottom: 0.5rem;
+      @include res-responsive(lg) {
+        text-align: center;
+      }
+    }
+
+    ul {
+      li {
+        font-size: 16px;
+        padding-left: 32px;
+        position: relative;
+        margin-bottom: 1rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &::before {
+          content: "";
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          top: 4px;
+          left: 0;
+          background-image: url("../images/img-ecosystem/ic_entertaiment_dots.png");
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  .service-thumb {
+    width: 100%;
+    grid-area: thumb;
+    margin: auto;
+    img {
+      width: 100%;
+    }
     @include res-responsive(lg) {
-      flex-direction: column-reverse !important;
-    }
-    .service-intro {
-      width: 42%;
-      padding-top: 6%;
-      @include res-responsive(lg) {
-        width: 100%;
-      }
-      h3 {
-        @include txt-font-semibold;
-        font-size: clamp(20px, 4vw, 32px);
-        margin-bottom: 0.5rem;
-        @include res-responsive(lg) {
-          text-align: center;
-        }
-      }
-
-      ul {
-        li {
-          font-size: 16px;
-          padding-left: 32px;
-          position: relative;
-          margin-bottom: 1rem;
-          &:last-child {
-            margin-bottom: 0;
-          }
-          &::before {
-            content: "";
-            width: 24px;
-            height: 24px;
-            position: absolute;
-            top: 4px;
-            left: 0;
-            background-image: url("../images/img-ecosystem/ic_entertaiment_dots.png");
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
-        }
-      }
-    }
-
-    .service-thumb {
-      width: 42%;
-      margin: auto;
-      img {
-        width: 100%;
-      }
-      @include res-responsive(lg) {
-        width: 100%;
-        max-width: 360px;
-      }
+      width: 100%;
+      max-width: 360px;
     }
   }
 
   .service-more {
     width: 100%;
     margin-top: 2rem;
+    grid-area: more;
     .grid-layout {
       text-align: center;
       .lst-prod {
@@ -255,8 +267,20 @@ margin-top: 0;
   }
 }
 
+.entertaiment-page {
+  .page-header {
+    margin-bottom: 6%;
+  }
+}
 .education-page {
   &.ecosystems-page-layout {
+    background-image: url("../images/img-ecosystem/bg_education_page_1.png");
+    background-position: 120% 110%;
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    @include res-responsive(lg) {
+      background-size: 100% auto;
+    }
     &::after {
       background-image: url("../images/img-ecosystem/bg_education_page.png");
     }
@@ -267,23 +291,13 @@ margin-top: 0;
   .service-container:nth-child(2) {
     background-color: #c2ebff;
     border-radius: 24px;
-    max-width: 75vw;
     @include res-responsive(lg) {
       max-width: 100%;
       border-radius: 0;
       padding: 1rem;
     }
-
-    .service-ord {
-      transform: translate(0);
-    }
     .service-intro {
-      width: 40%;
-      transform: translate(-10%, 15%);
-      @include res-responsive(lg) {
-        width: 100%;
-        transform: translate(0);
-      }
+      padding: 0 1.5rem 0;
       ul {
         li {
           &::before {
@@ -673,7 +687,7 @@ margin-top: 0;
 
 .partner-type {
   width: 100%;
-  padding: 2% 1rem;
+  padding: 3% 1rem;
   &:nth-child(2n + 1) {
     background-color: var(--grey-50);
   }

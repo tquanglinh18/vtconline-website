@@ -156,7 +156,7 @@
 
     &-body {
       text-align: center;
-      color: var(--vtco-primary-black);
+      color: var(--vtco-black);
       .card-title {
         font-size: 24px;
         @include txt-font-semibold;
@@ -224,7 +224,7 @@
           border-bottom: 1px solid var(--grey-200);
           text-align: center;
           &:first-child {
-            color: var(--vtco-primary-black);
+            color: var(--vtco-black);
             @include txt-font-semibold;
             text-align: start;
             small {

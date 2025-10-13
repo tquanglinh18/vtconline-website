@@ -171,15 +171,15 @@
 
     &.style-2 {
       text-align: center;
-      color: var(--vtco-primary-black);
+      color: var(--vtco-black);
     }
   }
 
   .section-info {
-    color: var(--vtco-primary-black);
+    color: var(--vtco-black);
   }
   .section-title {
-    color: var(--vtco-primary-black);
+    color: var(--vtco-black);
     @include txt-font-semibold;
     font-size: func-getPxFromRem(2.25);
     line-height: 1.25;
@@ -193,7 +193,7 @@
     }
   }
   .section-desc {
-    color: var(--vtco-primary-black);
+    color: var(--vtco-black);
     @include txt-font-medium;
     font-size: $txt-text-base;
     padding: func-getPxFromRem(2.5) 0;
@@ -215,7 +215,7 @@
     }
   }
   .section-actions {
-    color: var(--vtco-primary-black);
+    color: var(--vtco-black);
     @include display-flex-layout(row, nowrap, start, center, var(--space-base));
   }
 
@@ -327,7 +327,7 @@
       background: var(--grey-100);
       border-radius: 50%;
       // border: 10px solid var(--vtco-primary-40);
-      color: var(--vtco-primary-black);
+      color: var(--vtco-black);
       transition: all 0.5s ease;
       overflow: hidden;
       cursor: pointer;
@@ -609,7 +609,7 @@
 
     .owl-vtco-partner {
       display: flex;
-      gap: var(--space-base);
+      gap: var(--space-md);
       width: max-content;
       will-change: transform;
 
@@ -626,7 +626,7 @@
 }
 
 .vtco-recruitment {
-  background: var(--vtco-recruitment-bg);
+  background-color: var(--vtco-recruitment-bg);
   margin-bottom: 0;
 
   .vtco-section-body {
@@ -665,7 +665,9 @@
     }
   }
 
-  .section-info {
+  .section-info,
+  .section-title,
+  .section-desc {
     color: var(--white);
   }
 

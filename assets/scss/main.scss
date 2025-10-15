@@ -3,6 +3,7 @@
 //Add Components CSS
 @use "./base/_button";
 @use "./base/_card";
+@use "./base/_animation";
 
 //Add Page CSS
 @use "./pages/_home";
@@ -16,3 +17,5 @@
 //Add Layout CSS
 @use "./layout/_footer";
 @use "./layout/_header";
+@use "./layout/_layout";
+

@@ -32,6 +32,10 @@ $text-xxl: 28px;
   font-family: "Exo-Medium";
 }
 
+@mixin font-extrabold {
+    font-family: "Exo-ExtraBold";
+}
+
 @mixin font-Jersey10 {
   font-family: "Jersey10";
 }

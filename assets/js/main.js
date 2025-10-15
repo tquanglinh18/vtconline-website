@@ -35,6 +35,18 @@ function footerAccordion() {
     $(".footer-title").addClass("active").off("click");
   }
 }
+
+const togetherSwiper = new Swiper(".faq-swiper", {
+  loop: false,
+  centeredSlides: true,
+  spaceBetween: 30,
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 class LanguageSelect {
   constructor(selector, options = {}) {
     this.$el = $(selector);

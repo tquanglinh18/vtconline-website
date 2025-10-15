@@ -63,6 +63,14 @@
 }
 
 @font-face {
+  font-family: "Exo-ExtraBold";
+  src: url("../fonts/Exo-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Jersey10";
   src: url("../fonts/Jersey10-Regular.woff2") format("woff2");
   font-weight: 700;

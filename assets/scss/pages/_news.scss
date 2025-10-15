@@ -3,11 +3,183 @@
 .section-header {
   margin: 0 0 4% 0;
   background-color: var(--vtco-primary-10);
+  position: relative;
   .section-name {
     color: var(--vtco-black);
     margin: var(--space-base) 0;
     @include res-responsive(lg) {
       margin-bottom: 0;
+    }
+  }
+  .vtco-section-wrapper {
+    gap: 0;
+  }
+}
+
+.goBeyond-page {
+  margin: 0 0 2% 0;
+  background: #ea582c;
+  @media (min-width: 578px) and (max-width: 992px) {
+    background: linear-gradient(
+      180deg,
+      rgba(234, 88, 44, 1) 0%,
+      rgba(234, 88, 44, 1) 75%,
+      rgba(255, 255, 255, 1) 75%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  &::after {
+    content: "goBeyond";
+    color: #f8d4b01a;
+    font-size: clamp(96px, 20vw, 240px);
+    @include txt-font-bold;
+    position: absolute;
+    top: -5%;
+    left: 0%;
+    z-index: 0;
+  }
+  .section-name {
+    margin: 0;
+    color: #f8d4b0;
+    font-size: clamp(36px, 5vw, 96px);
+  }
+
+  .news-featured {
+    z-index: 1;
+    &:hover {
+      .news-title {
+        color: white !important;
+      }
+    }
+    .posted-date,
+    .news-title,
+    .news-desc {
+      color: white !important;
+    }
+  }
+}
+
+.goVibes-page {
+  margin: 0 0 2% 0;
+  background: #8462EA;
+  @media (min-width: 578px) and (max-width: 992px) {
+    background: linear-gradient(
+      180deg,
+      #8462EA 0%,
+      #8462EA 75%,
+      rgba(255, 255, 255, 1) 75%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  &::after {
+    content: "Vibes";
+    color:#D2C9F81A;
+    font-size: clamp(96px, 20vw, 240px);
+    @include txt-font-bold;
+    position: absolute;
+    top: -5%;
+    left: 0%;
+    z-index: 0;
+  }
+  .section-name {
+    margin: 0;
+    color: #D2C9F8;
+    font-size: clamp(36px, 5vw, 96px);
+  }
+
+  .news-featured {
+    z-index: 1;
+    &:hover {
+      .news-title {
+        color: white !important;
+      }
+    }
+    .posted-date,
+    .news-title,
+    .news-desc {
+      color: white !important;
+    }
+  }
+}
+
+.goCulture-page {
+  margin: 0 0 2% 0;
+  background: #97C012;
+  @media (min-width: 578px) and (max-width: 992px) {
+    background: linear-gradient(
+      180deg,
+      #97C012 0%,
+      #97C012 75%,
+      rgba(255, 255, 255, 1) 75%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  &::after {
+    content: "Culture";
+    color:#E3F6A01A;
+    font-size: clamp(96px, 20vw, 240px);
+    @include txt-font-bold;
+    position: absolute;
+    top: -5%;
+    left: 0%;
+    z-index: 0;
+  }
+  .section-name {
+    margin: 0;
+    color: #E3F6A0;
+    font-size: clamp(36px, 5vw, 96px);
+  }
+
+  .news-featured {
+    z-index: 1;
+    &:hover {
+      .news-title {
+        color: white !important;
+      }
+    }
+    .posted-date,
+    .news-title,
+    .news-desc {
+      color: white !important;
+    }
+  }
+}
+
+.goTogether-page {
+  margin: 0 0 2% 0;
+  background: #3788E4; 
+
+  &::after {
+    content: "Together";
+    color:#B3DFF4;
+    font-size: clamp(96px, 20vw, 240px);
+    @include txt-font-bold;
+    position: absolute;
+    top: -5%;
+    left: 0%;
+    z-index: 0;
+    opacity: 10%;
+  }
+  .section-name {
+    margin: 0;
+    color: #B3DFF4;
+    font-size: clamp(36px, 5vw, 96px);
+  }
+
+  .news-featured {
+    z-index: 1;
+    &:hover {
+      .news-title {
+        color: white !important;
+      }
+    }
+    .posted-date,
+    .news-title,
+    .news-desc {
+      color: white !important;
     }
   }
 }
@@ -186,7 +358,7 @@
         margin-bottom: 0;
       }
       .news-thumb {
-          aspect-ratio: 1/1;
+        aspect-ratio: 1/1;
         @include res-responsive(lg) {
           width: fit-content;
           max-width: 110px;

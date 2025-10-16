@@ -764,3 +764,187 @@
     }
   }
 }
+
+.journey-page {
+  &.journey-layout {
+    .journey-decor {
+      padding-top: 4%;
+      @include res-responsive(lg) {
+        padding-top: 12%;
+      }
+    }
+    .journey-content {
+      position: absolute;
+      padding-top: 6%;
+
+      img {
+        width: 100%;
+        max-width: 25vw;
+        object-fit: contain;
+        @include res-responsive(lg) {
+          max-width: 40vw;
+        }
+      }
+
+      @include res-responsive(lg) {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+      }
+    }
+  }
+}
+
+.journey-page-header {
+  width: 100%;
+  text-align: center;
+  aspect-ratio: 1920/900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include res-responsive(xl) {
+    aspect-ratio: 744/430;
+  }
+  @include res-responsive(lg) {
+    aspect-ratio: 375/300;
+  }
+  h1 {
+    color: var(--vtco-black);
+    @include txt-font-bold;
+    font-size: clamp(20px, 4vw, 72px);
+    line-height: 1.25;
+  }
+  p {
+    width: 100%;
+    max-width: 35vw;
+    margin: 0 auto;
+    color: var(--grey-600);
+    @include txt-font-medium;
+    padding: 2% 1rem 6%;
+    position: relative;
+    // @include res-responsive(xxl) {
+    //   max-width: 50vw;
+    // }
+    @include res-responsive(xl) {
+      max-width: 60vw;
+    }
+    @include res-responsive(lg) {
+      max-width: 75vw;
+      padding: 4% 1rem 12%;
+    }
+    @include res-responsive(sm) {
+      max-width: 90vw;
+      font-size: 14px;
+    }
+
+    &::after {
+      content: "▼";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      color: #c8811a;
+      font-size: 20px;
+      opacity: 1 !important;
+      transform: translateX(-50%);
+      animation: bounceUpSpecial 1s ease infinite;
+    }
+  }
+}
+
+.timeline-story {
+  width: 100%;
+  max-width: 66vw;
+  padding: 5% 1rem;
+  margin: 0 auto 12%;
+  display: flex;
+  flex-direction: column;
+  @include res-responsive(md) {
+    max-width: 520px;
+  }
+  .timeline-year {
+    width: 100%;
+    position: relative;
+    padding: 8% 0 16%;
+  }
+  .year-label {
+    width: 100%;
+    max-width: 12%;
+    writing-mode: vertical-lr;
+    display: flex;
+    align-items: center;
+    padding: 12% 2%;
+    @include txt-font-bold;
+    margin: 0 auto;
+    background-color: #afd13e;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%) skew(-16deg, -16deg) rotate(-16deg) scale(1.2);
+    font-size: clamp(36px, 6vw, 120px);
+    color: white;
+    span {
+      transform: skew(0, 32deg) rotate(180deg);
+    }
+    @include res-responsive(md) {
+      left: 0;
+      transform: translate(0%) skew(-16deg, -16deg) rotate(-16deg) scale(1.2);
+          padding: 20% 2%;
+    }
+  }
+  .timeline-items {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include res-responsive(xl) {
+      min-height: 240px;
+    }
+    @include res-responsive(md) {
+      min-height: unset;
+    }
+    .timeline-item {
+      width: 100%;
+      max-width: 40%;
+      font-size: clamp(16px, 2vw, 30px);
+      position: relative;
+      margin: 4% 0;
+      padding: 0 1rem;
+      @include txt-font-semibold;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        width: 16px;
+        height: 16px;
+        border-top: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-right: 8px solid black;
+        border-bottom: 8px solid black;
+        @include res-responsive(xl) {
+          width: 12px;
+          height: 12px;
+          border-top: 6px solid transparent;
+          border-left: 6px solid transparent;
+          border-right: 6px solid black;
+          border-bottom: 6px solid black;
+        }
+      }
+      @include res-responsive(md) {
+        max-width: 75%;
+                text-align: start !important;
+          margin: 4% auto 4% 18% !important;
+      }
+
+      &.content-right {
+        margin-left: auto;
+      }
+      &.content-left {
+        margin-right: auto;
+        text-align: end;
+      }
+    }
+  }
+}

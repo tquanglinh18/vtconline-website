@@ -270,10 +270,9 @@
   width: 100%;
   border-radius: var(--space-base);
   padding: var(--space-lg);
-  box-shadow: 0px 15px 35px 0px #676e7614;
-  box-shadow: 0px 5px 15px 0px #0000001f;
+  box-shadow: 0px 15px 35px 0px #676e7614, 0px 5px 15px 0px #0000001f;
   color: var(--grey-1000);
-  @include display-flex-layout(column, nowrap, start, center, 0);
+  @include display-flex-layout(column, nowrap, start, center, 0); 
 
   .input-group {
     width: 100%;
@@ -287,8 +286,7 @@
       box-shadow: 0px 0px 0px 1px #cdd1dc;
       padding: 8px 12px;
       border: 1px solid #cdd1dc;
-      @include txt-font-semibold;
-      border-radius: 8px;
+      border-radius: 8px !important;
       &::placeholder {
         color: #9ea5ad;
       }
@@ -306,6 +304,10 @@
     width: 62%;
     @include res-responsive(lg) {
       width: 100%;
+    }
+
+    strong, b, span[style="font-weight: bolder;"], [style="font-weight: bolder;"] {
+      @include txt-font-bold;
     }
   }
   .contact-section {

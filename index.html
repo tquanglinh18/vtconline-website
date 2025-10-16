@@ -15,23 +15,38 @@
 
     <header>
         <div class="vtco-header">
-            <div class="vtco-header-wrapper">
+            <div class="fixed-header vtco-header-wrapper">
+                <div class="vtco-actions">
+                    <div id="btn-toggle-mobile" class="menu-mobile">
+                        <img src="./assets/images/ic_menu_header.png" alt="">
+                    </div>
+                </div>
                 <a href="./index.html" class="vtco-logo">
                     <img src="https://vtconline.vn/images/logoVTCO_vn.png" alt="VTC Online Logo">
                 </a>
                 <div class="vtco-nav">
                     <ul>
-                        <li class="vtco-nav-item"><a href="./index.html">Trang chủ</a></li>
-                        <li class="vtco-nav-item"><a href="#">Về VTC Online</a></li>
-                        <li class="vtco-nav-item"><a href="#">Hệ sinh thái</a></li>
-                        <li class="vtco-nav-item"><a href="./news.html">Tin tức</a></li>
-                        <li class="vtco-nav-item"><a href="#">Văn hoá</a></li>
-                        <li class="vtco-nav-item"><a href="#">Cơ hội nghề nghiệp</a></li>
+                        <li class="vtco-nav-item"><a href="./index.html"  class="nav-title">Trang chủ</a></li>
+                        <li class="vtco-nav-item"><a href="#" class="nav-title">Về VTC Online</a></li>
+                        <li class="vtco-nav-item">
+                            <div class="nav-title">Hệ sinh thái</div>
+                            <div class="block-content block-collapse">
+                                <ul>
+                                    <li><a href="@GenerateLink.tamnhin">Tầm nhìn chiến lược</a></li>
+                                    <li><a href="@GenerateLink.giatricotloi">Giá trị cốt lõi</a></li>
+                                    <li><a href="@GenerateLink.sumenh">Sứ mệnh</a></li>
+                                    <li><a href="@GenerateLink.vanhoa">Văn hóa doanh nghiệp</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="vtco-nav-item"><a href="./news.html" class="nav-title">Tin tức</a></li>
+                        <li class="vtco-nav-item"><a href="#" class="nav-title">Văn hoá</a></li>
+                        <li class="vtco-nav-item"><a href="#" class="nav-title">Cơ hội nghề nghiệp</a></li>
                     </ul>
                 </div>
 
                 <div class="vtco-actions">
-                    <div class="lang-select" id="langSelect">
+                    <!-- <div class="lang-select" id="langSelect">
                         <div class="lang-selected">
                             <img src="https://flagcdn.com/w20/vn.png" alt="VN">
                             <span>VN</span>
@@ -48,6 +63,81 @@
                                 <img src="https://flagcdn.com/w20/jp.png" alt="JP"> JP
                             </div>
                         </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <div id="menu-mobile" class="vtco-header-mobile">
+                <div class="vtco-block-nav">
+                    <div class="vtco-block-wrapper">
+
+                        <div class="block-col">
+                            <div class="block-title">
+                                Trang chủ
+                            </div>
+                        </div>
+                        <div class="block-col">
+                            <div class="block-title">
+                                Về VTC Online
+                            </div>
+                            <div class="block-content block-collapse">
+                                <ul>
+                                    <li><a href="#">Hành trình kiến tạo</a></li>
+                                    <li><a href="#">Đội ngũ lãnh đạo</a></li>
+                                    <li><a href="#">Đối tác và khách hàng</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="block-col">
+                            <div class="block-title">
+                                Tin tức
+                            </div>
+                        </div>
+
+                        <div class="block-col">
+                            <div class="block-title">
+                                Văn hóa doanh nghiệp
+                            </div>
+                            <div class="block-content block-collapse">
+                                <ul>
+                                    <li><a href="#">Tầm nhìn chiến lược</a></li>
+                                    <li><a href="#">Giá trị cốt lõi</a></li>
+                                    <li><a href="#">Sứ mệnh</a></li>
+                                    <li><a href="#">Văn hóa doanh nghiệp</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="block-col">
+                            <div class="block-title">
+                                Hệ sinh thái VTC Online
+                            </div>
+                            <div class="block-content block-collapse">
+                                <ul>
+                                    <li><a href="#">Giải trí trực tuyến</a></li>
+                                    <li><a href="#">Thanh toán trực tuyến</a></li>
+                                    <li><a href="#">Giáo dục trực tuyến</a></li>
+                                    <li><a href="#">Văn phòng cho thuê</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="block-col">
+                            <div class="block-title">
+                                Cơ hội nghề nghiệp
+                            </div>
+                            <div class="block-content block-collapse">
+                                <ul>
+                                    <li><a href="#">Cơ hội nghề nghiệp</a></li>
+                                    <li><a href="#">Tuyển dụng</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="copy-right">
+                        VTC Online © 2025. All Rights Reserved.
                     </div>
                 </div>
             </div>
@@ -361,13 +451,13 @@
     </section>
 
     <footer>
-        <div class="vtco-footer">
-            <div class="vtco-footer-wrapper">
-                <div class="footer-col">
-                    <div class="footer-title">
+        <div id="vtco-footer" class="vtco-block-nav">
+            <div class="vtco-block-wrapper">
+                <div class="block-col">
+                    <div class="block-title">
                         Về VTC Online
                     </div>
-                    <div class="footer-content block-collapse">
+                    <div class="block-content block-collapse">
                         <ul>
                             <li><a href="#">Hành trình kiến tạo</a></li>
                             <li><a href="#">Đội ngũ lãnh đạo</a></li>
@@ -376,11 +466,11 @@
                     </div>
                 </div>
 
-                <div class="footer-col">
-                    <div class="footer-title">
+                <div class="block-col">
+                    <div class="block-title">
                         Văn hóa doanh nghiệp
                     </div>
-                    <div class="footer-content block-collapse">
+                    <div class="block-content block-collapse">
                         <ul>
                             <li><a href="#">Tầm nhìn chiến lược</a></li>
                             <li><a href="#">Giá trị cốt lõi</a></li>
@@ -390,11 +480,11 @@
                     </div>
                 </div>
 
-                <div class="footer-col">
-                    <div class="footer-title">
+                <div class="block-col">
+                    <div class="block-title">
                         Hệ sinh thái VTC Online
                     </div>
-                    <div class="footer-content block-collapse">
+                    <div class="block-content block-collapse">
                         <ul>
                             <li><a href="#">Giải trí trực tuyến</a></li>
                             <li><a href="#">Thanh toán trực tuyến</a></li>
@@ -404,11 +494,11 @@
                     </div>
                 </div>
 
-                <div class="footer-col">
-                    <div class="footer-title">
+                <div class="block-col">
+                    <div class="block-title">
                         Cơ hội nghề nghiệp
                     </div>
-                    <div class="footer-content block-collapse">
+                    <div class="block-content block-collapse">
                         <ul>
                             <li><a href="#">Cơ hội nghề nghiệp</a></li>
                             <li><a href="#">Tuyển dụng</a></li>
@@ -416,18 +506,18 @@
                     </div>
                 </div>
 
-                <div class="footer-col">
-                    <div class="footer-title">
+                <div class="block-col">
+                    <div class="block-title">
                         Liên hệ
                     </div>
-                    <div class="footer-content always-show">
+                    <div class="block-content always-show">
                         <ul>
                             <li>Địa chỉ: 18 Tam Trinh, Phường Minh Khai, Quận Hai Bà Trưng, Hà Nội, Việt
                                 Nam</li>
                             <li><a href="tel:+842439877985">Số điện thoại: +84.24.39877985</a></li>
                             <li><a href="mailto:vanphongvtconline@go.vn">Email: vanphongvtconline@go.vn</a></li>
                         </ul>
-                        <div class="footer-social">
+                        <div class="block-social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>

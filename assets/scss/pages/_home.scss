@@ -229,18 +229,23 @@
       margin: 0;
       text-align: center;
       background: #b0d987;
-      font-size: clamp(24px, 5vw, 60px);
-      color: white;
       background-image: url("../images/bg_header_layout_2.png");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      color: white;
+      font-size: clamp(24px, 5vw, 60px);
       @include txt-font-semibold;
       @include res-responsive(xl) {
         min-height: 320px;
       }
       @include res-responsive(md) {
         min-height: 200px;
+      }
+      .page-name {
+        color: white;
+        font-size: clamp(24px, 5vw, 60px);
+        @include txt-font-semibold;
       }
     }
   }

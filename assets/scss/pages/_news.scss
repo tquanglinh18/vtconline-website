@@ -19,6 +19,10 @@
 .goBeyond-page {
   margin: 0 0 2% 0;
   background: #ea582c;
+  min-height: 15vw;
+  @include res-responsive(md) {
+    min-height: 240px;
+  }
   @media (min-width: 578px) and (max-width: 992px) {
     background: linear-gradient(
       180deg,
@@ -63,6 +67,10 @@
 .goVibes-page {
   margin: 0 0 2% 0;
   background: #8462ea;
+  min-height: 15vw;
+  @include res-responsive(md) {
+    min-height: 240px;
+  }
   @media (min-width: 578px) and (max-width: 992px) {
     background: linear-gradient(
       180deg,
@@ -107,6 +115,10 @@
 .goCulture-page {
   margin: 0 0 2% 0;
   background: #97c012;
+  min-height: 15vw;
+  @include res-responsive(md) {
+    min-height: 240px;
+  }
   @media (min-width: 578px) and (max-width: 992px) {
     background: linear-gradient(
       180deg,
@@ -151,6 +163,10 @@
 .goTogether-page {
   margin: 0 0 2% 0;
   background: #3788e4;
+  min-height: 15vw;
+  @include res-responsive(md) {
+    min-height: 240px;
+  }
 
   &::after {
     content: "Together";

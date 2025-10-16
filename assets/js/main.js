@@ -1,6 +1,14 @@
 AOS.init();
 
 $(function () {
+  $('#btn-toggle-mobile').click(() => {
+    $(".vtco-header-mobile").toggleClass("active");
+    if ($(".vtco-header-mobile").hasClass("active")) {
+      $("#btn-toggle-mobile img").attr("src", "./assets/images/ic_close_header.png");
+    } else {
+      $("#btn-toggle-mobile img").attr("src", "./assets/images/ic_menu_header.png");
+    }
+  })
   const langSelect = new LanguageSelect("#langSelect", {
     onChange: function (lang) {
       console.log("Ngôn ngữ đã chọn:", lang);
@@ -8,31 +16,37 @@ $(function () {
   });
   console.log("Giá trị ban đầu:", langSelect.getValue());
 
-  footerAccordion();
+  footerAccordion(); footerAccordion("#menu-mobile");
+  footerAccordion("#vtco-footer");
 
   // Chạy lại khi resize (tránh lỗi khi xoay ngang/dọc)
   $(window).on("resize", function () {
-    footerAccordion();
+    footerAccordion("#menu-mobile");
+    footerAccordion("#vtco-footer");
   });
 });
 
 
-function footerAccordion() {
+function footerAccordion(idContainer) {
+  const $container = $(idContainer); // container cụ thể
+
+  if ($container.length === 0) return; // nếu không tìm thấy container thì thoát
+
   if ($(window).width() <= 992) {
-    $(".footer-title").on("click", function () {
+    $container.find(".block-title").off("click").on("click", function () {
       const $content = $(this).next(".block-collapse");
 
-      // Đóng tất cả block khác (accordion style)
-      $(".block-collapse").not($content).slideUp().removeClass("active");
-      $(".footer-title").not(this).removeClass("active");
+      // Đóng các block khác trong cùng container
+      $container.find(".block-collapse").not($content).slideUp().removeClass("active");
+      $container.find(".block-title").not(this).removeClass("active");
 
       // Toggle block hiện tại
       $content.stop(true, true).slideToggle().toggleClass("active");
       $(this).toggleClass("active");
     });
   } else {
-    $(".block-collapse").show().addClass("active");
-    $(".footer-title").addClass("active").off("click");
+    $container.find(".block-collapse").show().addClass("active");
+    $container.find(".block-title").addClass("active").off("click");
   }
 }
 

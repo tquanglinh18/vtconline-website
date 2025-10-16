@@ -1,7 +1,7 @@
 // _footer.scss
 @use "../global" as *;
 
-.vtco-footer {
+.vtco-block-nav {
   width: 100%;
   background-color: var(--white);
   color: var(--grey-800);
@@ -10,7 +10,7 @@
   position: relative;
   z-index: 1;
 
-  .vtco-footer-wrapper {
+  .vtco-block-wrapper {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
@@ -36,8 +36,8 @@
     text-align: center;
   }
 
-  .footer-col {
-    .footer-title {
+  .block-col {
+    .block-title {
       width: 100%;
       cursor: pointer;
       @include txt-font-bold;
@@ -51,10 +51,17 @@
           top: 50%;
           transform: translateY(-50%) rotate(90deg);
           font-size: 8px;
+          transition: all 0.3s ease;
+        }
+      }
+
+      &.active {
+         &::after {
+          transform: translateY(-50%) rotate(-90deg);
         }
       }
     }
-    .footer-content {
+    .block-content {
       margin-top: var(--space-base);
       @include res-responsive(lg) {
         display: none;
@@ -81,15 +88,14 @@
           &:hover {
             color: var(--vtco-primary-50);
             a {
-            color: var(--vtco-primary-50);
-
+              color: var(--vtco-primary-50);
             }
           }
         }
       }
     }
     &:last-child {
-      .footer-title {
+      .block-title {
         margin-bottom: 0;
       }
     }

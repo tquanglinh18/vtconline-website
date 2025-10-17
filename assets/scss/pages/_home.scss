@@ -735,6 +735,7 @@
   .lang-selected {
     display: flex;
     align-items: center;
+   justify-content: end;
     gap: 8px;
     padding: 8px 12px;
     border-radius: 6px;

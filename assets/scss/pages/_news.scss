@@ -478,6 +478,12 @@
         }
       }
     }
+
+    .article-body {
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 .article-related {
@@ -509,21 +515,21 @@
   .vtco-section-wrapper {
     max-width: 710px;
 
-    .article-wrap .article-body {
-      p:has(img) {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        img {
-          margin: 0 -50%;
-          max-width: 1440px;
-          @include res-responsive(lg) {
-            margin: 0;
-            width: 100%;
-          }
-        }
-      }
-    }
+    // .article-wrap .article-body {
+    //   p:has(img) {
+    //     width: 100%;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     img {
+    //       margin: 0 -50%;
+    //       max-width: 1440px;
+    //       @include res-responsive(lg) {
+    //         margin: 0;
+    //         width: 100%;
+    //       }
+    //     }
+    //   }
+    // }
   }
 }

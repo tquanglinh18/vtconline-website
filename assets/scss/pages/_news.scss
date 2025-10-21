@@ -498,16 +498,16 @@
     }
   }
 
-  .article-related-wrapper {
-    @include display-grid-cols(4, var(--space-base));
-    @include res-responsive(lg) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  // .article-related-wrapper {
+  //   @include display-grid-cols(4, var(--space-base));
+  //   @include res-responsive(lg) {
+  //     grid-template-columns: repeat(2, 1fr);
+  //   }
 
-    @include res-responsive(sm) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
+  //   @include res-responsive(sm) {
+  //     grid-template-columns: repeat(1, 1fr);
+  //   }
+  // }
 }
 
 .news-content-page {

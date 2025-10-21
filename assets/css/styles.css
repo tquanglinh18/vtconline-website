@@ -210,12 +210,18 @@ b {
   height: auto;
   aspect-ratio: 1920/840;
 }
+@media (max-width: 768px) {
+  .vtco-swiper {
+    aspect-ratio: 375/400;
+  }
+}
 .vtco-swiper .vtco-slide {
   width: 100%;
   position: relative;
 }
 .vtco-swiper .vtco-slide--img {
   width: 100%;
+  position: relative;
 }
 .vtco-swiper .vtco-slide--img img {
   width: 100%;
@@ -223,6 +229,18 @@ b {
   aspect-ratio: 1920/840;
   object-fit: cover;
   display: block;
+}
+@media (max-width: 768px) {
+  .vtco-swiper .vtco-slide--img img {
+    aspect-ratio: 375/400;
+  }
+}
+.vtco-swiper .vtco-slide--img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 0;
 }
 .vtco-swiper .vtco-slide--title {
   width: 100%;
@@ -317,6 +335,11 @@ b {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-base);
+}
+@media (max-width: 992px) {
+  .vtco-section-header {
+    margin: 0.5rem 0;
+  }
 }
 .vtco-section-header .section-name {
   margin-bottom: 0 !important;
@@ -1026,7 +1049,7 @@ b {
   padding: 8px 12px;
   border-radius: 6px;
   background: #fff;
-  min-width: 100px;
+  min-width: 64px;
 }
 .lang-select .lang-selected img {
   width: 24px;
@@ -1035,20 +1058,28 @@ b {
   border-radius: 50%;
   object-fit: cover;
 }
+@media (max-width: 768px) {
+  .lang-select .lang-selected span {
+    display: none;
+  }
+}
 .lang-select .lang-selected .arrow-dropdown {
   position: relative;
   width: 16px;
   height: 16px;
 }
 .lang-select .lang-selected .arrow-dropdown::after {
-  content: "▶";
+  content: "";
   position: absolute;
   right: 0.5rem;
   top: 50%;
-  transform: translate(0, -50%) rotate(90deg);
+  transform: translate(0, -50%);
   font-size: 10px;
   font-style: normal;
   transition: all 0.3s ease;
+  border-top: 4px solid #272727;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
 }
 .lang-select .lang-options {
   display: none;
@@ -1080,7 +1111,7 @@ b {
   object-fit: cover;
 }
 .lang-select.show-options .arrow-dropdown::after {
-  transform: rotate(270deg) translate(6px, 0);
+  transform: translate(0, -50%) rotate(180deg);
 }
 .lang-select.show-options .lang-options {
   display: block;
@@ -1620,21 +1651,6 @@ b {
 .article-related .news-card .news-content {
   width: 100%;
 }
-.article-related .article-related-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-base);
-}
-@media (max-width: 992px) {
-  .article-related .article-related-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 576px) {
-  .article-related .article-related-wrapper {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 
 .news-content-page {
   margin-bottom: 2%;
@@ -1916,7 +1932,7 @@ b {
   transform: rotate(180deg);
 }
 .service-container .service-more .education-slide {
-  aspect-ratio: 360/224;
+  width: 100% !important;
   border-radius: 16px;
   overflow: hidden;
   max-width: 360px;
@@ -1924,6 +1940,7 @@ b {
 .service-container .service-more .education-slide img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 360/224;
   object-fit: cover;
 }
 @media (max-width: 768px) {
@@ -3826,7 +3843,7 @@ b {
   }
 }
 .journey-page-header p::after {
-  content: "▼";
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -3835,6 +3852,9 @@ b {
   opacity: 1 !important;
   transform: translateX(-50%);
   animation: bounceUpSpecial 1s ease infinite;
+  border-top: 24px solid #c8811a;
+  border-right: 16px solid transparent;
+  border-left: 16px solid transparent;
 }
 
 .timeline-story {
@@ -4667,25 +4687,37 @@ b {
   padding: 1rem;
   text-align: center;
 }
+.vtco-block-nav .block-col.always-show .block-title::after {
+  display: none;
+}
+.vtco-block-nav .block-col.always-show .block-content {
+  display: block !important;
+  margin-top: var(--space-md);
+}
+.vtco-block-nav .block-col.always-show .block-content ul li:hover {
+  cursor: default;
+}
 .vtco-block-nav .block-col .block-title {
   width: 100%;
-  cursor: pointer;
   font-family: "Exo-Bold";
   position: relative;
 }
 @media (max-width: 992px) {
   .vtco-block-nav .block-col .block-title::after {
-    content: "▶";
+    content: "";
     position: absolute;
     right: 0.5rem;
     top: 50%;
-    transform: translateY(-50%) rotate(90deg);
+    transform: translateY(-50%);
     font-size: 8px;
     transition: all 0.3s ease;
+    border-top: 4px solid #272727;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
   }
 }
 .vtco-block-nav .block-col .block-title.active::after {
-  transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 .vtco-block-nav .block-col .block-content {
   margin-top: var(--space-base);
@@ -4694,13 +4726,6 @@ b {
   .vtco-block-nav .block-col .block-content {
     display: none;
   }
-}
-.vtco-block-nav .block-col .block-content.always-show {
-  display: block !important;
-  margin-top: var(--space-md);
-}
-.vtco-block-nav .block-col .block-content.always-show ul li:hover {
-  cursor: default;
 }
 .vtco-block-nav .block-col .block-content ul li {
   padding: var(--space-sm) 0;
@@ -4835,6 +4860,9 @@ header {
   transform: translateX(-25%);
   background-color: white;
   padding-top: 1rem;
+}
+.vtco-header-wrapper .vtco-actions {
+  min-width: 64px;
 }
 
 .vtco-header-mobile {

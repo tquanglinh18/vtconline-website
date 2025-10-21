@@ -4,17 +4,36 @@
   width: 100%;
   height: auto;
   aspect-ratio: 1920/840;
+  @include res-responsive(md) {
+    aspect-ratio: 375/400;
+  }
   .vtco-slide {
     width: 100%;
     position: relative;
     &--img {
       width: 100%;
+      position: relative;
       img {
         width: 100%;
         height: 100%;
         aspect-ratio: 1920/840;
         object-fit: cover;
         display: block;
+        @include res-responsive(md) {
+          aspect-ratio: 375/400;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 50%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+        z-index: 0;
       }
     }
     &--title {
@@ -97,6 +116,9 @@
       center,
       var(--space-base)
     );
+        @include res-responsive(lg) {
+      margin: 0.5rem 0;
+    }
     .section-name {
       margin-bottom: 0 !important;
     }
@@ -735,18 +757,23 @@
   .lang-selected {
     display: flex;
     align-items: center;
-   justify-content: end;
+    justify-content: end;
     gap: 8px;
     padding: 8px 12px;
     border-radius: 6px;
     background: #fff;
-    min-width: 100px;
+    min-width: 64px;
     img {
       width: 24px;
       height: 24px;
       aspect-ratio: 1/1;
       border-radius: 50%;
       object-fit: cover;
+    }
+    @include res-responsive(md) {
+      span {
+        display: none;
+      }
     }
 
     .arrow-dropdown {
@@ -755,14 +782,17 @@
       height: 16px;
 
       &::after {
-        content: "▶";
+        content: "";
         position: absolute;
         right: 0.5rem;
         top: 50%;
-        transform: translate(0, -50%) rotate(90deg);
+        transform: translate(0, -50%);
         font-size: 10px;
         font-style: normal;
         transition: all 0.3s ease;
+        border-top: 4px solid #272727;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
       }
     }
   }
@@ -801,7 +831,7 @@
   &.show-options {
     .arrow-dropdown {
       &::after {
-        transform: rotate(270deg) translate(6px, 0);
+        transform: translate(0, -50%) rotate(180deg);
       }
     }
     .lang-options {

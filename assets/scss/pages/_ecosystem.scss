@@ -251,13 +251,14 @@
       }
     }
     .education-slide {
-      aspect-ratio: 360/224;
+      width: 100% !important;
       border-radius: 16px;
       overflow: hidden;
       max-width: 360px;
       img {
         width: 100%;
         height: 100%;
+        aspect-ratio: 360/224;
         object-fit: cover;
       }
       @include res-responsive(md) {

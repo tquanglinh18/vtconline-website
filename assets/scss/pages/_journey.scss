@@ -838,7 +838,7 @@
     }
 
     &::after {
-      content: "▼";
+      content: "";
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -847,6 +847,9 @@
       opacity: 1 !important;
       transform: translateX(-50%);
       animation: bounceUpSpecial 1s ease infinite;
+      border-top: 24px solid #c8811a;
+      border-right: 16px solid transparent;
+      border-left: 16px solid transparent;
     }
   }
 }
@@ -1010,12 +1013,11 @@
       gap: 1rem;
       border-bottom: 3px solid transparent;
       border-top: 3px solid transparent;
-                  @include res-responsive(md) {
+      @include res-responsive(md) {
         padding: 1rem 0.5rem;
         font-size: 16px;
       }
       @include res-responsive(sm) {
-
         font-size: 12px;
       }
 

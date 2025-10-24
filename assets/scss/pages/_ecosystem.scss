@@ -20,7 +20,6 @@
   &::after {
     content: "";
     width: 100%;
-    aspect-ratio: 1920/674;
     position: absolute;
     top: 0;
     right: 0;
@@ -106,15 +105,18 @@
   @include res-responsive(lg) {
     max-width: 600px;
     padding: 4% 1rem;
-    grid-template-areas: "ord" "thumb" "intro" "more";
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
   }
   &:first-child {
     margin-top: 0;
   }
   &:last-child {
     margin-bottom: 0;
-        @include res-responsive(xxl) {
+    @include res-responsive(xxl) {
       padding-bottom: 6% !important;
     }
     @include res-responsive(lg) {
@@ -251,10 +253,8 @@
       }
     }
     .education-slide {
-      width: 100% !important;
       border-radius: 16px;
       overflow: hidden;
-      max-width: 360px;
       img {
         width: 100%;
         height: 100%;

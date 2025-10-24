@@ -9,7 +9,29 @@
     "start": "sass --watch ./assets/scss/main.scss ./assets/css/styles.css --no-source-map"
   },
   "dependencies": {
-    "sass": "^1.83.0",
+    "autoprefixer": "^10.4.21",
+    "gulp-cli": "^3.1.0",
+    "sass": "^1.93.2",
     "yarn": "^1.22.21"
-  }
+  },
+  "devDependencies": {
+    "cssnano": "^7.1.1",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1"
+  },
+  "browserslist": [
+  "> 0.1%",
+  "last 5 versions",
+  "Firefox ESR",
+  "not dead",
+  "ie >= 11",
+  "ios >= 9",
+  "android >= 4.4",
+  "safari >= 9"
+]
 }
